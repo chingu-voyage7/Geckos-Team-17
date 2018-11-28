@@ -1,2 +1,14 @@
 # Geckos-Team-17
-Add-project-description-here | Voyage-7 | https://chingu.io/
+Welcome to Geckos team 17
+
+We are building a pet dogs facility CMS using a MERN stack. 
+The backend made from Node, Express and MongoDB is boilerplated from and existing project.
+
+Hope you like it.
+
+Members on the Team include:
+Blarcman
+Kaouter
+HixOba
+
+WATCH THIS SPACE!
