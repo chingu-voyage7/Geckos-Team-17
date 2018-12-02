@@ -161,6 +161,9 @@ apiRouter.post('/:petId/pets/:todoId', (req, res) => {
 	 the list of pets, it wont duplicate itself if its already
 	 existing in the list.
 	*/
+
+	//addtoset was not working. I assume we have to update the fields newarrivaldate, expectedexitdate and actualexitdate
+	//This ones updates it. No duplicity or redundancy found till now.
 	console.log(req.params.petId);
 	Pet.findByIdAndUpdate(req.params.petId, {
 		newarrivaldate: req.body.newarrivaldate,
