@@ -74,9 +74,11 @@ apiRouter.post('/create', (req, res) => {
 // @desc    Get a specific todo route
 // @access  Public
 apiRouter.get('/:todoId', (req, res) => {
+	console.log(req.params.todoId);
 	Todo.findById(req.params.todoId)
 		.then((foundTodo) => {
-			if (foundToDo) {
+			if (foundTodo) {
+				console.log("Here");
 				res.json(foundTodo);
 			} else {
 				res.status(404).json({ TodoNotFound: 'There are no todos' });
@@ -91,8 +93,10 @@ apiRouter.get('/:todoId', (req, res) => {
 // @route   POST api/v1/todos/:todoId
 // @desc    Update todos route
 // @access  Public
+
+//Use {new:true} to return the new document
 apiRouter.post('/:todoId', (req, res) => {
-	Todo.findOneAndUpdate({ _id: req.params.todoId }, req.body)
+	Todo.findOneAndUpdate({ _id: req.params.todoId},req.body, {new: true})
 		.then((updatedTodo) => {
 			if (updatedTodo) {
 				res.json(updatedTodo);
@@ -140,12 +144,15 @@ apiRouter.get('/:petId/pets/new', (req, res) => {
 // request, its actual usage is NOT for INSERTing documents, BUT for
 // ADDing "REFERENCES TO other DOCUMENTS" to a specific owner's (pets) document
 // @access  Public
-apiRouter.post('/:petId/pets', (req, res) => {
+
+//Have to add "todoId" in params
+apiRouter.post('/:petId/pets/:todoId', (req, res) => {
 	const addDataPet = new Pet({
 		newarrivaldate: req.body.newarrivaldate,
 		expectedexitdate: req.body.expectedexitdate,
 		actualexitdate: req.body.actualexitdate
 	});
+	console.log("Adding pet");
 	console.log(addDataPet);
 
 	/* 
@@ -154,12 +161,15 @@ apiRouter.post('/:petId/pets', (req, res) => {
 	 the list of pets, it wont duplicate itself if its already
 	 existing in the list.
 	*/
+	console.log(req.params.petId);
 	Pet.findByIdAndUpdate(req.params.petId, {
-		$addToSet: { pet: req.body.addDataPet }
-	}).then(() => {
+		newarrivaldate: req.body.newarrivaldate,
+			expectedexitdate: req.body.expectedexitdate,
+			actualexitdate: req.body.actualexitdate }
+	).then((pet) => {
 		console.log('newarrivaldate', 'expectedexitdate', 'actualexitdate', 'pet');
-		//return res.json(pet);
-		return res.redirect('/todos/${req.params.todoId}');
+		console.log(pet);
+		return res.redirect(`/api/v1/todos/${req.params.todoId}`);
 	});
 });
 

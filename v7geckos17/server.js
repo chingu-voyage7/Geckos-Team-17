@@ -18,6 +18,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // DB Config
+console.log(require('./config/keys'));
 const db = require('./config/keys').mongoURI;
 
 // Connect to MongoDB
