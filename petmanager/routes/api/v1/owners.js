@@ -43,6 +43,7 @@ apiRouter.get('/', (req, res) => {
 // @desc    Get owner by Id route
 // @access   Public
 apiRouter.get('/:ownerId', (req, res) => {
+	console.log(req.params);
 	Owner.findById(req.params.ownerId)
 		//.populate('owner', [ 'name', 'contactnumber', 'pets', 'address' ])
 		//.exec()
@@ -108,11 +109,13 @@ apiRouter.post('/register', (req, res) => {
 // @desc    Form to RENDER new owner's pet route - probably
 // accessed thru ToDo page. If so, HOW?
 // @access  Public
+
+//This only lists all the owners and all the pets
 apiRouter.get('/:ownerId/pets/new', (req, res) => {
 	Owner.findById(req.params.ownerId).then((owner) => {
 		Pet.find().then((pets) => {
 			console.log('newOwnerPet', { owner, pets });
-			//res.json('newOwnerPetForm', { owner, pets });
+			res.json('200', { owner, pets });
 		});
 	});
 });
@@ -122,6 +125,8 @@ apiRouter.get('/:ownerId/pets/new', (req, res) => {
 // request, its actual usage is NOT for INSERTing documents, BUT for
 // ADDing "REFERENCES TO other DOCUMENTS" to a specific owner's (user's) document
 // @access  Public
+
+//the last line needs adjustment
 apiRouter.post('/:ownerId/pets', (req, res) => {
 	/* 
 	 Update command used is $addToSet instead of $push
@@ -133,8 +138,9 @@ apiRouter.post('/:ownerId/pets', (req, res) => {
 		$addToSet: { pets: req.body.petId }
 	}).then(() => {
 		console.log('pet');
+		console.log(req.params.ownerId);
 		//return res.json(pet);
-		return res.redirect('/owners/${req.params.ownerId}');
+		return res.redirect(`/api/v1/owners/${req.params.ownerId}`);
 	});
 });
 
