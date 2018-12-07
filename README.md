@@ -18,9 +18,7 @@ React
 
 Members on the Team include: 
 
-Blarcman
-
-Kaouter
+Anshul2166
 
 HixOba
 
