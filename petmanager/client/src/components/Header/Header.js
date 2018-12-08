@@ -11,6 +11,7 @@ class Header extends Component {
                 src="https://bulma.io/images/bulma-logo.png"
                 width="112"
                 height="28"
+                alt="title"
               />
             </a>
 
@@ -20,6 +21,7 @@ class Header extends Component {
               aria-label="menu"
               aria-expanded="false"
               data-target="navbarBasicExample"
+              href="/"
             >
               <span aria-hidden="true" />
               <span aria-hidden="true" />
@@ -29,30 +31,55 @@ class Header extends Component {
 
           <div id="navbarBasicExample" class="navbar-menu">
             <div class="navbar-start">
-              <a class="navbar-item">Home</a>
-
-              <a class="navbar-item">Documentation</a>
-
-              <div class="navbar-item has-dropdown is-hoverable">
-                <a class="navbar-link">More</a>
-
-                <div class="navbar-dropdown">
-                  <a class="navbar-item">About</a>
-                  <a class="navbar-item">Jobs</a>
-                  <a class="navbar-item">Contact</a>
-                  <hr class="navbar-divider" />
-                  <a class="navbar-item">Report an issue</a>
+              <div class="navbar-item">
+                <div class="control has-icons-left has-icons-right">
+                  <input
+                    class="input is-success"
+                    type="text"
+                    placeholder="Text input"
+                    value="bulma"
+                  />
+                  <span class="icon is-small is-left">
+                    <i class="fas fa-user" />
+                  </span>
                 </div>
               </div>
             </div>
 
             <div class="navbar-end">
+              <a class="navbar-item" href="/">
+                Home
+              </a>
+
+              <a class="navbar-item" href="/">
+                Documentation
+              </a>
+
+              <div class="navbar-item has-dropdown is-hoverable">
+                <a class="navbar-link" href="/">
+                  More
+                </a>
+
+                <div class="navbar-dropdown">
+                  <a class="navbar-item" href="/">
+                    Find People
+                  </a>
+                  <a class="navbar-item" href="/">
+                    Messages
+                  </a>
+                  <a class="navbar-item" href="/">
+                    My Contacts
+                  </a>
+                </div>
+              </div>
               <div class="navbar-item">
                 <div class="buttons">
-                  <a class="button is-primary">
+                  <a class="button is-primary" href="/">
                     <strong>Sign up</strong>
                   </a>
-                  <a class="button is-light">Log in</a>
+                  <a class="button is-light" href="/">
+                    Log in
+                  </a>
                 </div>
               </div>
             </div>
