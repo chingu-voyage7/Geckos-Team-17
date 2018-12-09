@@ -36,11 +36,11 @@ class Header extends Component {
                   <input
                     class="input is-success"
                     type="text"
-                    placeholder="Text input"
-                    value="bulma"
+                    placeholder="Search"
+                    value=""
                   />
                   <span class="icon is-small is-left">
-                    <i class="fas fa-user" />
+                    <i class="fas fa-search" />
                   </span>
                 </div>
               </div>
@@ -48,30 +48,24 @@ class Header extends Component {
 
             <div class="navbar-end">
               <a class="navbar-item" href="/">
-                Home
-              </a>
-
-              <a class="navbar-item" href="/">
-                Documentation
-              </a>
-
-              <div class="navbar-item has-dropdown is-hoverable">
-                <a class="navbar-link" href="/">
-                  More
-                </a>
-
-                <div class="navbar-dropdown">
-                  <a class="navbar-item" href="/">
-                    Find People
-                  </a>
-                  <a class="navbar-item" href="/">
-                    Messages
-                  </a>
-                  <a class="navbar-item" href="/">
-                    My Contacts
-                  </a>
+                <div class="control has-icons-left has-icons-right">
+                  <i class="fas fa-search fa-fw" />
+                  &nbsp;Find People
                 </div>
-              </div>
+              </a>
+              <a class="navbar-item" href="/">
+                <div class="control has-icons-left has-icons-right">
+                <i class="fas fa-envelope fa-fw" />
+                  &nbsp;Messages
+                </div>
+              </a>
+              <a class="navbar-item" href="/">
+                <div class="control has-icons-left has-icons-right">
+                <i class="fas fa-address-book fa-fw" />
+                  &nbsp;My Contacts
+                </div>
+              </a>
+
               <div class="navbar-item">
                 <div class="buttons">
                   <a class="button is-primary" href="/">
