@@ -7,8 +7,9 @@ The backend made from Node, Express and MongoDB is boilerplated from and existin
 Hope you like it.
 
 Members on the Team include:
-Blarcman
-Kaouter
+
+Anshul2166
+
 HixOba
 
 WATCH THIS SPACE!
