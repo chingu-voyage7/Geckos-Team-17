@@ -3,10 +3,10 @@
 	"version": "1.0.0",
 	"main": "server.js",
 	"scripts": {
-		"client-install": "npm install --prefix client",
+		"client-install": "yarn install --prefix client",
 		"start": "node server.js",
 		"server": "nodemon server.js",
-		"client": "npm start --prefix client",
+		"client": "yarn start --prefix client",
 		"dev" : "concurrently \"npm run server\" \"npm run client\" ",
 		"dev2" : "concurrently \"yarn run server\" \"yarn run client\" "
 	},
