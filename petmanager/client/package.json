@@ -13,10 +13,10 @@
   },
   "scripts": {
     "css-build": "node-sass _sass/main.scss css/maim.css --include-path ./src --include-path ./bulma-start src -o src/",
-		"css-watch": "npm run css-build --include-path ./src --include-path ./bulma-start src/ -o src/  --watch --recursive",
+    "css-watch": "npm run css-build --include-path ./src --include-path ./bulma-start src/ -o src/  --watch --recursive",
     "js-build": "babel _javascript --out-dir lib",
     "js-watch": "npm run js-build -- --watch",
-    "start": "npm run css-watch | npm run js-watch",
+    "start": "npm-run-all --parallel css-watch js-start",
     "js-start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -28,5 +28,8 @@
     "not ie <= 11",
     "not op_mini all"
   ],
-  "proxy": "http://localhost:5000"
+  "proxy": "http://localhost:5000",
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
+  }
 }
