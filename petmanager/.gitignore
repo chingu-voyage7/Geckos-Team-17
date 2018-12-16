@@ -4,6 +4,8 @@ yarn.lock
 package-lock.json
 /config/keys.js
 /config/passport.js
-src/**/*.css
-src/**/*.scss
-.vscode 
+/src/index.css
+/src/App.css
+/bulma-start/_sass/
+/bulma-start/css/
+/.vscode 
