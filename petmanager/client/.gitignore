@@ -25,7 +25,5 @@ yarn-debug.log*
 yarn-error.log*
 
 # css files
-/src/index.css
-/src/App.css
-/bulma-start/_sass/
-/bulma-start/css/
+src/**/*.css
+/src/**/*.css
