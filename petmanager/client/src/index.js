@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './App.css'; 
 import 'bulma/css/bulma.css'; 
+import './bulmastyles.css';
 import App from './App';
 import { unregister } from './service-worker-custom';
 

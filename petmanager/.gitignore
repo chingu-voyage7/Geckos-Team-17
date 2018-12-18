@@ -6,6 +6,5 @@ package-lock.json
 /config/passport.js
 /src/index.css
 /src/App.css
-/bulma-start/_sass/
-/bulma-start/css/
+/src/**/*.css
 /.vscode 
