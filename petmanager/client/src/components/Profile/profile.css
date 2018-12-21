@@ -25,3 +25,8 @@
 .profile {
   margin: 2.5%;
 }
+ol {
+  list-style-position: inside !important;
+  text-align: center;
+  list-style: disc;
+}

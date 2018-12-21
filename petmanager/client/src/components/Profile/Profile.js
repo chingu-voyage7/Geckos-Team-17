@@ -43,6 +43,21 @@ class Profile extends Component {
             </div>
           </div>
         </div>
+        <div className="second-row">
+          <div class="container is-fluid">
+            <div class="columns">
+              <div class="column is-one-fifth skills">
+                <ol>
+                  <li>Skill 1</li>
+                  <li>Skill 2</li>
+                  <li>Skill 3</li>
+                  <li>Skill 4</li>
+                  <li>Skill 5</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
