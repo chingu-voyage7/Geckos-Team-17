@@ -65,6 +65,18 @@ class Profile extends Component {
                   </div>
                 </article>
               </div>
+              <div class="column is-two-fifths">
+                <div class="tabs">
+                  <ul>
+                    <li class="is-active">
+                      <a>Timeline</a>
+                    </li>
+                    <li>
+                      <a>About</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
         </div>
