@@ -1,3 +1,27 @@
 .left-align {
   text-align: left !important;
 }
+.image-round {
+  border-radius: 50%;
+}
+.image-column {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.image-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+.image-img {
+  height: 30vh !important;
+  width: 30vh !important;
+}
+.left-align {
+  margin-right: auto;
+}
+.right-align {
+  margin-left: auto;
+}
+.profile {
+  margin: 2.5%;
+}
