@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Header from "../Header/Header";
+import Profile from "../Profile/Profile";
 import "./App.css";
 
 class App extends Component {
@@ -7,7 +8,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <h1>This is the App page</h1>
+        <Profile />
       </div>
     );
   }
