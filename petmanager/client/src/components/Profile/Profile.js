@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import './profile.css';
 
 class Profile extends Component {
   render() {
@@ -18,22 +19,25 @@ class Profile extends Component {
             </div>
             <div class="column is-two-fifths">
               <div class="column">
-                <h3 class="title is-3">Name of User</h3>
+                <h3 class="title is-3">Anshul Dubey</h3>
               </div>
               <div class="column">
-                <i class="fas fa-map-marker fa-fw" />
+                <i class="fas fa-map-marker fa-fw left-align"/>
                 H-3 Krishna Nagar
               </div>
               <div class="column">
                 <a href="/">Edit Profile</a>
               </div>
-              <div  class="column">
-                <i class="fas fa-address-book fa-fw" />
-                My Contacts
-              </div>
-              <div  class="column">
-                <i class="fas fa-address-book fa-fw" />
-                My Contacts
+              <div class="column">
+                <span>
+                  <i class="fas fa-address-book fa-fw left-align" />
+                  Add Contacts
+                </span>
+                &emsp;&emsp;
+                <span>
+                  <i class="fas fa-list fa-fw left-align" />
+                  My to-do list
+                </span>
               </div>
             </div>
           </div>
