@@ -27,6 +27,9 @@
 }
 ol {
   list-style-position: inside !important;
-  text-align: center;
+  /* text-align: center; */
   list-style: disc;
+}
+.second-row {
+  margin-top: 5%;
 }

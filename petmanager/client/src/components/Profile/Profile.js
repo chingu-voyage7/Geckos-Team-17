@@ -7,18 +7,20 @@ class Profile extends Component {
       <div className="profile">
         <div class="container is-fluid">
           <div class="columns">
-            <div class="column is-one-fifth">
+            <div class="column is-2">
               <div class="card-image image-column">
                 <figure class="image image-center">
                   <img
                     class="is-rounded image-img right-align"
                     src="https://bulma.io/images/placeholders/128x128.png"
+                    width="50"
+                    height="50"
                     alt="Placeholder"
                   />
                 </figure>
               </div>
             </div>
-            <div class="column is-two-fifths left-align">
+            <div class="column is-two-fifths">
               <div class="column">
                 <h3 class="title is-3">Anshul Dubey</h3>
               </div>
@@ -46,14 +48,22 @@ class Profile extends Component {
         <div className="second-row">
           <div class="container is-fluid">
             <div class="columns">
-              <div class="column is-one-fifth skills">
-                <ol>
-                  <li>Skill 1</li>
-                  <li>Skill 2</li>
-                  <li>Skill 3</li>
-                  <li>Skill 4</li>
-                  <li>Skill 5</li>
-                </ol>
+              <div class="column is-2 skills">
+                <article class="message">
+                  <div class="message-header">
+                    <p>My skills</p>
+                    <button class="fa fa-pencil icon" aria-label="delete" />
+                  </div>
+                  <div class="message-body">
+                    <ol>
+                      <li>Skill 1</li>
+                      <li>Skill 2</li>
+                      <li>Skill 3</li>
+                      <li>Skill 4</li>
+                      <li>Skill 5</li>
+                    </ol>
+                  </div>
+                </article>
               </div>
             </div>
           </div>
