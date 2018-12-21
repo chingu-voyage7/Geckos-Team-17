@@ -9,15 +9,19 @@ import './bulmastyles.css';
 
 import Categories from './app/layout/Categories'; 
 //import Todos from './Todos';
- 
+  
  class App extends Component {
   render() {
     return (
       <Provider store={store}>
         <Router>
           <div className="App">
-            <h1>PetMan</h1>
-            <Route exact path="/" component={ Categories } />  
+            <div className="container">
+              <h1>PetMan</h1>
+            </div>
+            <div className="container">
+              <Route exact path="/" component={ Categories } />  
+            </div>
             <div className="container">
               <Route exact path="/register" component={ Register } />
               <Route exact path="/login" component={ Login } />
