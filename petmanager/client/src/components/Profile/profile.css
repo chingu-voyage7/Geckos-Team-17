@@ -12,10 +12,6 @@
   margin-left: auto;
   margin-right: auto;
 }
-.image-img {
-  height: 30vh !important;
-  width: 30vh !important;
-}
 .left-align {
   margin-right: auto;
 }
@@ -32,4 +28,11 @@ ol {
 }
 .second-row {
   margin-top: 5%;
+}
+.space {
+  margin-left: 10%;
+}
+.image > img {
+  width: 200px !important;
+  height: 200px !important;
 }

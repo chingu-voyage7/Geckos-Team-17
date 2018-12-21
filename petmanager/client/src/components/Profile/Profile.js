@@ -9,20 +9,14 @@ class Profile extends Component {
       <div className="profile">
         <div class="container is-fluid">
           <div class="columns">
-            <div class="column is-2">
+            <div class="column is-2 level-item">
               <div class="card-image image-column">
                 <figure class="image image-center">
-                  <img
-                    class="is-rounded image-img right-align"
-                    src="https://bulma.io/images/placeholders/128x128.png"
-                    width="50"
-                    height="50"
-                    alt="Placeholder"
-                  />
+                  <img class="is-rounded left-align right-align" src="/assets/images/random.jpg" alt="profile pic"/>
                 </figure>
               </div>
             </div>
-            <div class="column is-two-fifths">
+            <div class="column is-two-fifths space">
               <div class="column">
                 <h3 class="title is-3">Anshul Dubey</h3>
               </div>
@@ -67,18 +61,54 @@ class Profile extends Component {
                   </div>
                 </article>
               </div>
-              <div class="column is-two-fifths">
+              <div class="column is-two-fifths space">
                 <Tabs>
                   <TabList>
-                    <Tab>Title 1</Tab>
-                    <Tab>Title 2</Tab>
+                    <Tab>Timeline</Tab>
+                    <Tab>Basic Info</Tab>
                   </TabList>
 
                   <TabPanel>
-                    <h2>Any content 1</h2>
+                    <ol>
+                      <li>
+                        Started working in sector 1 in Leeds from June 2016
+                      </li>
+                      <li>Moved to Manchester to work in May 2017</li>
+                      <li>Got recognition from governemnt in December 2017</li>
+                      <li>
+                        Started working in london as pet vet in ABC hospital
+                      </li>
+                    </ol>
                   </TabPanel>
                   <TabPanel>
-                    <h2>Any content 2</h2>
+                    <table class="table">
+                      <tbody>
+                        <tr>
+                          <th>
+                            <strong>Phone</strong>
+                          </th>
+                          <td> +91 10000111108</td>
+                        </tr>
+                        <tr>
+                          <th>
+                            <strong>Email</strong>
+                          </th>
+                          <td>randomperson@gmail.com</td>
+                        </tr>
+                        <tr>
+                          <th>
+                            <strong>Address</strong>
+                          </th>
+                          <td>Apartment 1, random colony</td>
+                        </tr>
+                        <tr>
+                          <th>
+                            <strong>Birthday</strong>
+                          </th>
+                          <td>1st June 1980</td>
+                        </tr>
+                      </tbody>
+                    </table>
                   </TabPanel>
                 </Tabs>
               </div>
