@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import "react-tabs/style/react-tabs.css";
 import "./profile.css";
 
 class Profile extends Component {
@@ -66,16 +68,19 @@ class Profile extends Component {
                 </article>
               </div>
               <div class="column is-two-fifths">
-                <div class="tabs">
-                  <ul>
-                    <li class="is-active">
-                      <a>Timeline</a>
-                    </li>
-                    <li>
-                      <a>About</a>
-                    </li>
-                  </ul>
-                </div>
+                <Tabs>
+                  <TabList>
+                    <Tab>Title 1</Tab>
+                    <Tab>Title 2</Tab>
+                  </TabList>
+
+                  <TabPanel>
+                    <h2>Any content 1</h2>
+                  </TabPanel>
+                  <TabPanel>
+                    <h2>Any content 2</h2>
+                  </TabPanel>
+                </Tabs>
               </div>
             </div>
           </div>
