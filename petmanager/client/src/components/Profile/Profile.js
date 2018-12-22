@@ -44,7 +44,7 @@ class Profile extends Component {
         <div className="second-row">
           <div class="container is-fluid">
             <div class="columns">
-              <div className="column is-one-fifth skills">
+              <div className="column is-one-fifth-desktop skills">
                 <article class="message">
                   <div class="message-header">
                     <p>My skills</p>
@@ -61,7 +61,7 @@ class Profile extends Component {
                   </div>
                 </article>
               </div>
-              <div class="is-two-fifths space">
+              <div class="column is-two-fifths-desktop is-full-mobile space">
                 <Tabs>
                   <TabList>
                     <Tab>Timeline</Tab>
