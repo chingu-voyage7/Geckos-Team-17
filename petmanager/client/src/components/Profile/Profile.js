@@ -9,7 +9,7 @@ class Profile extends Component {
       <div className="profile">
         <div class="container is-fluid">
           <div class="columns">
-            <div class="is-2-desktop is-5-mobile level-item">
+            <div class="column is-one-fifth level-item">
               <div class="card-image image-column">
                 <figure class="image image-center">
                   <img class="is-rounded left-align right-align" src="/assets/images/random.jpg" alt="profile pic"/>
@@ -44,7 +44,7 @@ class Profile extends Component {
         <div className="second-row">
           <div class="container is-fluid">
             <div class="columns">
-              <div class="column is-2 skills">
+              <div className="column is-one-fifth skills">
                 <article class="message">
                   <div class="message-header">
                     <p>My skills</p>
@@ -61,7 +61,7 @@ class Profile extends Component {
                   </div>
                 </article>
               </div>
-              <div class="column is-two-fifths space">
+              <div class="is-two-fifths space">
                 <Tabs>
                   <TabList>
                     <Tab>Timeline</Tab>
