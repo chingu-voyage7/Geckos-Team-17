@@ -9,14 +9,14 @@ class Profile extends Component {
       <div className="profile">
         <div class="container is-fluid">
           <div class="columns">
-            <div class="column is-2 level-item">
+            <div class="is-2-desktop is-5-mobile level-item">
               <div class="card-image image-column">
                 <figure class="image image-center">
                   <img class="is-rounded left-align right-align" src="/assets/images/random.jpg" alt="profile pic"/>
                 </figure>
               </div>
             </div>
-            <div class="column is-two-fifths space">
+            <div class="is-two-fifths-desktop is-7-mobile space">
               <div class="column">
                 <h3 class="title is-3">Anshul Dubey</h3>
               </div>
