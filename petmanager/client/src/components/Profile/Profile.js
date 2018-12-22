@@ -9,8 +9,8 @@ class Profile extends Component {
       <div className="profile">
         <div class="container is-fluid">
           <div class="columns">
-            <div class="column is-one-fifth level-item">
-              <div class="card-image image-column">
+            <div class="column is-one-fifth level-item has-text-centered-mobile">
+              <div class="card-image image-column has-text-centered-mobile">
                 <figure class="image image-center">
                   <img class="is-rounded left-align right-align" src="/assets/images/random.jpg" alt="profile pic"/>
                 </figure>
@@ -18,16 +18,16 @@ class Profile extends Component {
             </div>
             <div class="is-two-fifths-desktop is-7-mobile space">
               <div class="column">
-                <h3 class="title is-3">Anshul Dubey</h3>
+                <h3 class="title is-3 has-text-centered-mobile">Anshul Dubey</h3>
               </div>
-              <div class="column">
+              <div class="column is-hidden-mobile">
                 <i class="fas fa-map-marker fa-fw left-align" />
                 H-3 Krishna Nagar
               </div>
-              <div class="column">
+              <div class="column has-text-centered-mobile">
                 <a href="/">Edit Profile</a>
               </div>
-              <div class="column">
+              <div class="column has-text-centered-mobile">
                 <span>
                   <i class="fas fa-address-book fa-fw left-align" />
                   Add Contacts
