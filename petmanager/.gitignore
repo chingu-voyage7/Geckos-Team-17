@@ -1,6 +1,10 @@
 /node_modules
 pseudocode.text
+yarn.lock
 package-lock.json
 /config/keys.js
 /config/passport.js
-.vscode
+/src/index.css
+/src/App.css
+/src/**/*.css
+/.vscode 
