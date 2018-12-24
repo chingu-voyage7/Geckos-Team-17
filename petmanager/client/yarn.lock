@@ -3865,6 +3865,21 @@ flush-write-stream@^1.0.0:
     inherits "^2.0.1"
     readable-stream "^2.0.4"
 
+focus-trap-react@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/focus-trap-react/-/focus-trap-react-4.0.1.tgz#3cffd39341df3b2f546a4a2fe94cfdea66154683"
+  integrity sha512-UUZKVEn5cFbF6yUnW7lbXNW0iqN617ShSqYKgxctUvWw1wuylLtyVmC0RmPQNnJ/U+zoKc/djb0tZMs0uN/0QQ==
+  dependencies:
+    focus-trap "^3.0.0"
+
+focus-trap@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/focus-trap/-/focus-trap-3.0.0.tgz#4d2ee044ae66bf7eb6ebc6c93bd7a1039481d7dc"
+  integrity sha512-jTFblf0tLWbleGjj2JZsAKbgtZTdL1uC48L8FcmSDl4c2vDoU4NycN1kgV5vJhuq1mxNFkw7uWZ1JAGlINWvyw==
+  dependencies:
+    tabbable "^3.1.0"
+    xtend "^4.0.1"
+
 follow-redirects@^1.0.0:
   version "1.5.10"
   resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.5.10.tgz#7b7a9f9aea2fdff36786a94ff643ed07f4ff5e2a"
@@ -6319,6 +6334,11 @@ no-case@^2.2.0:
   dependencies:
     lower-case "^1.1.1"
 
+no-scroll@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/no-scroll/-/no-scroll-2.1.1.tgz#f37e08cb159b75a5bdbfc0a87cd9223e120e6e27"
+  integrity sha512-YTzGAJOo/B6hkodeT5SKKHpOhAzjMfkUCCXjLJwjWk2F4/InIg+HbdH9kmT7bKpleDuqLZDTRy2OdNtAj0IVyQ==
+
 node-forge@0.7.5:
   version "0.7.5"
   resolved "https://registry.yarnpkg.com/node-forge/-/node-forge-0.7.5.tgz#6c152c345ce11c52f465c2abd957e8639cd674df"
@@ -7666,7 +7686,7 @@ prop-types-extra@^1.0.1, prop-types-extra@^1.1.0:
     react-is "^16.3.2"
     warning "^3.0.0"
 
-prop-types@^15.5.10, prop-types@^15.6.2:
+prop-types@^15.5.10, prop-types@^15.6.1, prop-types@^15.6.2:
   version "15.6.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.6.2.tgz#05d5ca77b4453e985d60fc7ff8c859094a497102"
   integrity sha512-3pboPvLiWD7dkI3qf3KbUe6hKFKa52w+AE0VCqECtf+QHAKgOL37tTaNCnuX1nAAQ4ZhyP+kYVKf8rLmJ/feDQ==
@@ -7914,6 +7934,13 @@ react-lifecycles-compat@^3.0.4:
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
   integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
 
+react-minimalist-portal@^2.3.1:
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/react-minimalist-portal/-/react-minimalist-portal-2.3.1.tgz#4853e3f48a74a32c1b8767601887cdf7941eeba3"
+  integrity sha1-SFPj9Ip0oywbh2dgGIfN95Qe66M=
+  dependencies:
+    prop-types "^15.6.1"
+
 react-overlays@^0.8.3:
   version "0.8.3"
   resolved "https://registry.yarnpkg.com/react-overlays/-/react-overlays-0.8.3.tgz#fad65eea5b24301cca192a169f5dddb0b20d3ac5"
@@ -7925,6 +7952,19 @@ react-overlays@^0.8.3:
     prop-types-extra "^1.0.1"
     react-transition-group "^2.2.0"
     warning "^3.0.0"
+
+react-responsive-modal@^3.5.1:
+  version "3.5.1"
+  resolved "https://registry.yarnpkg.com/react-responsive-modal/-/react-responsive-modal-3.5.1.tgz#1503bec9d616b5c00074e793ebb24055205e194e"
+  integrity sha512-5OHViOGoHrRYipwPI0rYki9Q/1iBgWcZHoo5Y7NL8RKEiQ7YKLzVGReQgcu7/e5Ju7Xfu4GBAXfQQ6R2TWtyUA==
+  dependencies:
+    classnames "^2.2.6"
+    focus-trap-react "^4.0.1"
+    no-scroll "^2.1.1"
+    prop-types "^15.6.2"
+    react-lifecycles-compat "^3.0.4"
+    react-minimalist-portal "^2.3.1"
+    react-transition-group "^2.4.0"
 
 react-scripts@2.1.1:
   version "2.1.1"
@@ -7981,7 +8021,7 @@ react-scripts@2.1.1:
   optionalDependencies:
     fsevents "1.2.4"
 
-react-transition-group@^2.2.0:
+react-transition-group@^2.2.0, react-transition-group@^2.4.0:
   version "2.5.2"
   resolved "https://registry.yarnpkg.com/react-transition-group/-/react-transition-group-2.5.2.tgz#9457166a9ba6ce697a3e1b076b3c049b9fb2c408"
   integrity sha512-vwHP++S+f6KL7rg8V1mfs62+MBKtbMeZDR8KiNmD7v98Gs3UPGsDZDahPJH2PVprFW5YHJfh6cbNim3zPndaSQ==
@@ -9071,6 +9111,11 @@ symbol-tree@^3.2.2:
   resolved "https://registry.yarnpkg.com/symbol-tree/-/symbol-tree-3.2.2.tgz#ae27db38f660a7ae2e1c3b7d1bc290819b8519e6"
   integrity sha1-rifbOPZgp64uHDt9G8KQgZuFGeY=
 
+tabbable@^3.1.0:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/tabbable/-/tabbable-3.1.1.tgz#db7512f28a9a1ed16e4275bd190131be9d5ad8e9"
+  integrity sha512-583MHIOwictf7+zbxqO/L5fBqMN6Li4SJ1XTKQA9WzHRA7c2BB+D+Ny7Y6kGqU2u+rHK59+oRzrBvMU53aZz+A==
+
 table@^4.0.3:
   version "4.0.3"
   resolved "https://registry.yarnpkg.com/table/-/table-4.0.3.tgz#00b5e2b602f1794b9acaf9ca908a76386a7813bc"
@@ -9988,7 +10033,7 @@ xregexp@4.0.0:
   resolved "https://registry.yarnpkg.com/xregexp/-/xregexp-4.0.0.tgz#e698189de49dd2a18cc5687b05e17c8e43943020"
   integrity sha512-PHyM+sQouu7xspQQwELlGwwd05mXUFqwFYfqPO0cC7x4fxyHnnuetmQr6CjJiafIDoH4MogHb9dOoJzR/Y4rFg==
 
-xtend@^4.0.0, xtend@~4.0.1:
+xtend@^4.0.0, xtend@^4.0.1, xtend@~4.0.1:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/xtend/-/xtend-4.0.1.tgz#a5c6d532be656e23db820efb943a1f04998d63af"
   integrity sha1-pcbVMr5lbiPbgg77lDofBJmNY68=

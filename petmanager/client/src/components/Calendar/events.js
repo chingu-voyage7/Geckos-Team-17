@@ -107,6 +107,7 @@ export default [
       id: 15,
       title: 'To xyz house',
       start: new Date(2018,11,25,14,0,0),
-      end: new Date(2018,11,25,18,0,0)
+      end: new Date(2018,11,25,18,0,0),
+      description:"Need to go to the abc house dog"
     },
   ]
