@@ -5,17 +5,13 @@ import events from "./events";
 import Modal from "react-responsive-modal";
 const localizer = BigCalendar.momentLocalizer(moment);
 
-function handleEvent(event) {
-  console.log("Event clicked");
-  console.log(event);
-}
-
 class Calendar extends Component {
   constructor(props) {
     super(props);
     this.state = {
       open: false,
-      data: {}
+      data: {},
+      width:window.innerWidth
     };
   }
   onOpenModal = event => {
@@ -26,7 +22,15 @@ class Calendar extends Component {
   onCloseModal = () => {
     this.setState({ open: false });
   };
+
   render() {
+    let views=['month','week','agenda','day'];
+    if(this.state.width>=800){
+      views=['month','week','agenda','day'];
+    }
+    else{
+      views=['month'];
+    }
     return (
       <div style={{ height: 600, margin: "2.5%", marginTop: "5%" }}>
         <BigCalendar
@@ -35,6 +39,7 @@ class Calendar extends Component {
           startAccessor="start"
           endAccessor="end"
           onSelectEvent={this.onOpenModal}
+          views={views}
         />
         <Modal
           open={this.state.open}
