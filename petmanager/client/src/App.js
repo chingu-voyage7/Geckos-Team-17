@@ -5,7 +5,6 @@ import Login from './components/auth/Login';
 import { Provider } from 'react-redux';
 import store from './store';
 
-import './bulmastyles.css';
 //import Header from './components/header/Header';
 import Categories from './components/categories/Categories'; 
 //import Todos from './Todos';

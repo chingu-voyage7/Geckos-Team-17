@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './bulmastyles.css'; 
 import App from './App';
 import { unregister } from './service-worker-custom';
-
+import 'bulma/css/bulma.css';
 ReactDOM.render(<App />, document.getElementById('root'))
 
 // If you want your app to work offline and load faster, you can change
