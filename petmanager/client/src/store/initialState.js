@@ -1,0 +1,1 @@
+//This file will contain the initial state for our redux store
