@@ -1,0 +1,24 @@
+// Import the initial variables (only needed if you want to customise this file):
+//@import "bulma/sass/utilities/initial-variables";
+@import "bulma/sass/utilities/_all";
+@import "bulma/sass/base/_all";
+
+@import "bulma/sass/components/navbar";
+@import "bulma/sass/components/menu";
+
+@import "bulma/sass/elements/box";
+@import "bulma/sass/elements/button";
+@import "bulma/sass/elements/form";
+
+@import "bulma/sass/layout/section";
+
+// Your customisations go here...
+
+// Set your own initial variables -  Add a serif family
+$family-serif: "Merriweather", "Georgia", serif;
+
+// Set the derived variables - Use the new serif family
+$family-primary: $family-serif;
+
+// Import the rest of Bulma:
+@import "bulma/bulma.sass";

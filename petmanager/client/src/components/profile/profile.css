@@ -1,0 +1,41 @@
+.left-align {
+  text-align: left !important;
+}
+.image-round {
+  border-radius: 50%;
+}
+.image-column {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+/* .image-center {
+  margin-left: auto;
+  margin-right: auto;
+} */
+.left-align {
+  margin-right: auto;
+}
+.right-align {
+  margin-left: auto;
+}
+.profile {
+  margin: 2.5%;
+}
+ol {
+  list-style-position: inside !important;
+  /* text-align: center; */
+  list-style: disc;
+}
+.second-row {
+  margin-top: 5%;
+}
+
+.image > img {
+  width: 30vh !important;
+  height: 30vh !important;
+}
+@media (min-width: 1281px) {
+  .space {
+    margin-left: 10%;
+  }
+}

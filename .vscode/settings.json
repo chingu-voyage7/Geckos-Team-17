@@ -1,0 +1,5 @@
+{
+    "gitlens.advanced.repositorySearchDepth": 2,
+    "gitlens.currentLine.dateFormat": "ddd, MMM Do YYYY, HH:mm: ",
+    "gitlens.debug": true
+}
