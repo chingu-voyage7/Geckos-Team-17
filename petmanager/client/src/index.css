@@ -21,3 +21,11 @@ code {
   background-color: inherit;
   color: white;
 }
+.link-text {
+  cursor: pointer;
+  color: blue;
+  margin-top: 2.5%;
+}
+.text-center {
+  text-align: center;
+}
