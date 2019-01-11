@@ -1,11 +1,12 @@
 import React from 'react';
 
-import PetSlider from '../common/petsSlider/PetSlider';
+import CategoriesListTabs from '../categories/CategoriesListTabs';
+//import PetSlider from '../common/slider/PetSlider';
 
 const ShowEvents = () => {
   return (
     <div>
-      <PetSlider />
+      <CategoriesListTabs />
     </div>
   )
 }
