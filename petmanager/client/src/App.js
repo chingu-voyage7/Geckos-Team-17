@@ -9,7 +9,7 @@ import './bulmastyles.css';
 //import Header from './components/header/Header';
 import Categories from './components/categories/Categories';
 //import ShowEvents from './components/events/ShowEvents'; 
-import PetSlider from './components/common/petsSlider/PetSlider';
+import PetSlider from './components/common/slider/PetSlider';
 //import CategoriesReTabs from './components/categories/CategoriesReTabs';
 //import CategoriesSideNav from './components/categories/CategoriesSideNav';
 //import Todos from './Todos';
@@ -22,7 +22,7 @@ import PetSlider from './components/common/petsSlider/PetSlider';
           <div className="App">
             <Categories >
               <Switch>
-                <Route exact path="/" component={ PetSlider } /> 
+                <Route exact path="/" component={ PetSlider } />
               </Switch>
             </Categories> 
             <div className="container">
