@@ -3,9 +3,10 @@ import BigCalendar from "react-big-calendar";
 import moment from "moment";
 import events from "./events";
 import Modal from "react-responsive-modal";
-import DatePicker from "react-datepicker";
-import TimePicker from "react-time-picker";
 import DateTimePicker from "react-datetime-picker";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import * as todoActions from "../../actions/todoActions";
 const localizer = BigCalendar.momentLocalizer(moment);
 
 class Calendar extends Component {
@@ -16,7 +17,7 @@ class Calendar extends Component {
       data: {},
       width: window.innerWidth,
       toDoOpen: false,
-      startDate: new Date(),
+      date: new Date(),
       time: "10:00"
     };
   }
@@ -38,8 +39,12 @@ class Calendar extends Component {
     this.setState({ toDoOpen: false });
   };
 
-  handleChange = date => this.setState({ startDate: date });
+  handleChange = date => this.setState({ date: date });
   onChange = time => this.setState({ time });
+
+  onSubmit=()=>{
+      this.props.todos.addToDo("title","description",this.state.date);
+  }
   render() {
     let views = ["month", "week", "agenda", "day"];
     if (this.state.width < 800) {
@@ -96,11 +101,11 @@ class Calendar extends Component {
             <p>Time:&nbsp;</p>
             <DateTimePicker
               onChange={this.onChange}
-              value={this.state.startDate}
+              value={this.state.date}
             />
           </div>
           <div className="row has-text-centered">
-            <button class="button">Add</button>
+            <button class="button" onClick={this.onSubmit}>Add</button>
           </div>
         </Modal>
       </div>
@@ -108,4 +113,10 @@ class Calendar extends Component {
   }
 }
 
-export default Calendar;
+const mapActionsToProps=dispatch=>{
+  return{
+    todos:bindActionCreators(todoActions,dispatch)
+  };
+}
+
+export default connect(null,mapActionsToProps)(Calendar);
