@@ -1,5 +1,3 @@
-ShowEvents.js
-
 import React from 'react';
 
 //import CategoriesListTabs from '../categories/CategoriesListTabs'; 
