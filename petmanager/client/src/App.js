@@ -1,5 +1,3 @@
-App.js
-
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Register from './components/auth/Register';
