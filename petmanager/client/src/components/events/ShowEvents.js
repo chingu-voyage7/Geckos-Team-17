@@ -1,14 +1,14 @@
 import React from 'react';
 
-import CategoriesListTabs from '../categories/CategoriesListTabs';
-//import PetSlider from '../common/slider/PetSlider';
+//import CategoriesListTabs from '../categories/CategoriesListTabs'; 
+import PetSlider from '../common/slider/PetSlider';
 
 const ShowEvents = () => {
   return (
     <div>
-      <CategoriesListTabs />
+      <PetSlider />
     </div>
   )
 }
-
+ 
 export default ShowEvents;

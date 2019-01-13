@@ -19,8 +19,6 @@ class Categories extends Component {
         <CategoriesListTabs />
         {this.props.children}
       </div>
-  
-      
     )
   }
 }
