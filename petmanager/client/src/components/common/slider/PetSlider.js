@@ -1,15 +1,25 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 class PetSlider extends Component {
 
   state = {
-    pets: []
+    petname: ''
   }
   
+  componentWillMount() {
+    axios.get('/api/v1/pets').then(res => {
+      this.setState({
+        petname: res.data
+      })
+    })
+  }
+
   render() {
+    console.log(this.state.petname)
     return (
       <div>
-        Pet Slider 
+        Slider content 
       </div>
     );
   }

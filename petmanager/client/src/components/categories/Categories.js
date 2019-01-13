@@ -1,8 +1,10 @@
+Categories.js
+
 import React, { Component } from 'react';
 
 //import Header from '../header/Header';
 //import PetSlider from '../common/slider/PetSlider';
-//import CategoriesListTabs from '../categories/CategoriesListTabs';
+import CategoriesListTabs from '../categories/CategoriesListTabs';
 import ShowEvents from '../events/ShowEvents';
 
 class Categories extends Component {
@@ -16,13 +18,13 @@ class Categories extends Component {
         
       <div>
         Header
-        <ShowEvents />
+        <CategoriesListTabs />
         {this.props.children}
       </div>
-
+  
       
     )
   }
 }
 
-export default Categories; 
+export default Categories;
