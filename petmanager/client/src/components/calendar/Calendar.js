@@ -54,7 +54,7 @@ class Calendar extends Component {
       <div style={{ height: 600, margin: "2.5%", marginTop: "5%" }}>
         <BigCalendar
           localizer={localizer}
-          events={events}
+          events={this.props.todo.events}
           startAccessor="start"
           endAccessor="end"
           onSelectEvent={this.onOpenModal}
@@ -113,10 +113,14 @@ class Calendar extends Component {
   }
 }
 
+const mapStateToProps=state=>({
+   todo:state.todo
+});
+
 const mapActionsToProps=dispatch=>{
   return{
     todos:bindActionCreators(todoActions,dispatch)
   };
 }
 
-export default connect(null,mapActionsToProps)(Calendar);
+export default connect(mapStateToProps,mapActionsToProps)(Calendar);
