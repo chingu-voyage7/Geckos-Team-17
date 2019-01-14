@@ -120,8 +120,4 @@ class Profile extends Component {
   }
 }
 
-<<<<<<< HEAD
 export default Profile;
-=======
-export default Profile;
->>>>>>> Update actions, store, profile and .env to resolve merge conflicts
