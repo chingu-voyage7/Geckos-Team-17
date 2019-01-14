@@ -1,25 +1,26 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
+import SliderTemplate from './slider_templates';
+
 class PetSlider extends Component {
 
   state = {
-    petname: ''
+    pets: []
   }
   
   componentWillMount() {
     axios.get('/api/v1/pets').then(res => {
       this.setState({
-        petname: res.data
+        pet: res.data
       })
     })
   }
 
   render() {
-    console.log(this.state.petname)
     return (
       <div>
-        Slider content 
+        <SliderTemplate />
       </div>
     );
   }
