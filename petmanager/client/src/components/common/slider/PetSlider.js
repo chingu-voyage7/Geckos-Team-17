@@ -16,11 +16,11 @@ class PetSlider extends Component {
       })
     })
   }
-
+ 
   render() {
     return (
       <div>
-        <SliderTemplate />
+        <SliderTemplate data={this.state.pets} type="displayed" />
       </div>
     );
   }

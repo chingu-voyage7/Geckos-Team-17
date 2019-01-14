@@ -15,7 +15,6 @@ class Categories extends Component {
     return (
         
       <div>
-        Header
         <CategoriesListTabs />
         {this.props.children}
       </div>
