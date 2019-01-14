@@ -1,25 +1,26 @@
 import React, { Component } from 'react';
 
+//import Header from '../header/Header';
+//import PetSlider from '../common/slider/PetSlider';
+import CategoriesListTabs from '../categories/CategoriesListTabs';
+//import ShowEvents from '../events/ShowEvents';
 
 class Categories extends Component {
+
+  state = {
+ 
+  }
+  
   render () {
     return (
         
-      <div className="categories">
-        <div className="container">
-          <div className="navbar-item">
-            <div className="tabs is-boxed">
-              <ul>
-                <li className="is-active"><a><span>Cat Rounds</span></a></li>
-                <li><a><span>Dogs</span></a></li>
-                <li><a><span>All Others ...</span></a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
+      <div>
+        Header
+        <CategoriesListTabs />
+        {this.props.children}
       </div>
     )
   }
 }
 
-export default Categories; 
+export default Categories;
