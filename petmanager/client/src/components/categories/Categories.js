@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 //import Header from '../header/Header';
-//import PetSlider from '../common/slider/PetSlider';
+//import Slider from '../common/slider/Slider';
 import CategoriesListTabs from '../categories/CategoriesListTabs';
 //import ShowEvents from '../events/ShowEvents';
 

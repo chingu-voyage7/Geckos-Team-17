@@ -9,7 +9,7 @@ import store from './store/store';
 
 import Categories from './components/categories/Categories';
 //import ShowEvents from './components/events/ShowEvents'; 
-import PetSlider from './components/common/slider/PetSlider';
+import Slider from './components/common/slider/Slider';
 //import CategoriesReTabs from './components/categories/CategoriesReTabs';
 //import CategoriesSideNav from './components/categories/CategoriesSideNav';
 //import Todos from './Todos';
@@ -23,7 +23,7 @@ import PetSlider from './components/common/slider/PetSlider';
             <Header />
             <Categories >
               <Switch>
-                <Route exact path="/" component={ PetSlider } />
+                <Route exact path="/" component={ Slider } />
               </Switch>
             </Categories> 
             <div className="container">

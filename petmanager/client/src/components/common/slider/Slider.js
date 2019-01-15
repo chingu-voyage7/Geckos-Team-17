@@ -3,14 +3,14 @@ import axios from 'axios';
 
 import SliderTemplate from './slider_templates';
 
-class PetSlider extends Component {
+class Slider extends Component {
 
   state = {
     pets: []
   }
   
   componentWillMount() {
-    axios.get('/api/v1/pets').then(res => {
+    axios.get('/api/v1/pets?_start=${this.props.start}&_end=${this.props.amount}').then(res => {
       this.setState({
         pet: res.data
       })
@@ -20,10 +20,14 @@ class PetSlider extends Component {
   render() {
     return (
       <div>
-        <SliderTemplate data={this.state.pets} type="displayed" />
+        <SliderTemplate 
+          data={this.state.pets} 
+          type={this.props.type}
+          settings={this.props.settings} 
+        />
       </div>
     );
   }
 }
 
-export default PetSlider;
+export default Slider;

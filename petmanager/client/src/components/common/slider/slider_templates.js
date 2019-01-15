@@ -7,7 +7,7 @@ import styles from './slider.css';
 const SliderTemplates = (props) => {
   
     let template = null;
-    
+  
     const settings = {
       dots: true,
       infinite: true,
@@ -16,23 +16,23 @@ const SliderTemplates = (props) => {
       slidesToShow: 1,
       slidesToScroll: 1
     }
-
+ 
     switch(props.type) {
-      case ('displayed'):
+      case ('petShown'):
         template = props.data.map( (item, i) => {
           return(
             <div key={i}>
-              <div className={styles.displayed_item}>
+              <div className={styles.petShown_item}>
                 <Link to={'/pets/${item.id}'}>
-                  <div className={styles.displayed_item.petname}> 
-                    {item.petname}
+                  <div className={styles.petShown_item.petShownCaption}> 
+                    {item.petname} 
                   </div>
-                </Link>
+                </Link> 
               </div>
             </div> 
           )
         })
-
+ 
         break;
       default:
       template = null;
