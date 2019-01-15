@@ -14,7 +14,8 @@ const SliderTemplates = (props) => {
       arrows: false,
       speed: 500,
       slidesToShow: 1,
-      slidesToScroll: 1
+      slidesToScroll: 1,
+      ...props.settings
     }
  
     switch(props.type) {
@@ -25,7 +26,7 @@ const SliderTemplates = (props) => {
               <div className={styles.petShown_item}>
                 <Link to={'/pets/${item.id}'}>
                   <div className={styles.petShown_item.petShownCaption}> 
-                    {item.petname} 
+                    {item.petname}
                   </div>
                 </Link> 
               </div>
