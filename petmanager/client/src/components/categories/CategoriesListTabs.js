@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+//import { Link } from 'react-router-dom';
  
 class CategoriesListTabs extends Component {
   render () {
@@ -19,5 +20,5 @@ class CategoriesListTabs extends Component {
     )
   }
 }
-
+ 
 export default CategoriesListTabs; 

@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
-//import Header from '../header/Header';
-//import Slider from '../common/slider/Slider';
-import CategoriesListTabs from '../categories/CategoriesListTabs';
+import Header from '../header/Header';
+//import PetSlider from '../common/slider/PetSlider';
+//import CategoriesListTabs from '../categories/CategoriesListTabs';
 //import ShowEvents from '../events/ShowEvents';
-
+ 
 class Categories extends Component {
 
   state = {
@@ -15,11 +15,11 @@ class Categories extends Component {
     return (
         
       <div>
-        <CategoriesListTabs />
+        <Header />
         {this.props.children}
       </div>
     )
   }
 }
-
+ 
 export default Categories;
