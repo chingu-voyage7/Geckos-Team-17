@@ -41,8 +41,10 @@ apiRouter.get('/', (req, res) => {
 // @access  Public
 apiRouter.post('/create', (req, res) => {
 	// build new todo document
+	console.log("creating a to-do");
 	const newTodo = new Todo({
 		itemname: req.body.itemname,
+		description:req.body.description,
 		completed: req.body.completed,
 		updatecatround: req.body.updatecatround,
 		meetnewclient: req.body.meetnewclient,
@@ -65,7 +67,7 @@ apiRouter.post('/create', (req, res) => {
 					})
 					*/
 		.catch((err) => {
-			//console.log(err);
+			console.log(err);
 			res.status(500).json(err);
 		});
 });
