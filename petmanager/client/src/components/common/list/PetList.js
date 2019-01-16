@@ -6,13 +6,16 @@ import axios from 'axios';
 class PetList extends Component {
 
   state = {
-
+    pets: [],
+    start: this.props.start,
+    end: this.props.start + this.props.amount,
+    amount: this.props.amount
   }
    
   render() {
     return (
       <div>
-        Pets list page
+        Pets list page 
       </div>
     );
   }

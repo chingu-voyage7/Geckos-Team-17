@@ -33,17 +33,16 @@ const SliderTemplates = (props) => {
             </div> 
           )
         })
- 
+
         break;
       default:
       petTemplate = null;
     }
-   
     return (
       <Slick {...settings} >
         {petTemplate} 
       </Slick>
     );
 }; 
-
+ 
 export default SliderTemplates;
