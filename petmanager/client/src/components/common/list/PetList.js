@@ -11,8 +11,18 @@ class PetList extends Component {
     end: this.props.start + this.props.amount,
     amount: this.props.amount
   }
-   
+  
+  componentWillMount() {
+    axios.get
+      ('http//localhost:5000/pets?_start=${this.state.start}&_end={this.state.end}')
+        .then(res => {
+          this.setState({
+            pets: [...this.state.pets, ...res.data]
+          })
+        })
+  }
   render() {
+    console.log(this.state.pets)
     return (
       <div>
         Pets list page 

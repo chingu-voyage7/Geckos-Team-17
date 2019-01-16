@@ -6,7 +6,7 @@ import styles from './slider.css';
 
 const SliderTemplates = (props) => {
   
-    let petTemplate = null;
+    let petSliderTemplate = null;
   
     const settings = {
       dots: true,
@@ -20,7 +20,7 @@ const SliderTemplates = (props) => {
    
     switch(props.type) {
       case ('showPet'):
-        petTemplate = props.data.map( (pet, index) => {
+        petSliderTemplate = props.data.map( (pet, index) => {
           return(
             <div key={index}>
               <div className={styles.showPet_pet}>
@@ -36,13 +36,13 @@ const SliderTemplates = (props) => {
 
         break;
       default:
-      petTemplate = null;
+      petSliderTemplate = null;
     }
     return (
       <Slick {...settings} >
-        {petTemplate} 
+        {petSliderTemplate} 
       </Slick>
     );
 }; 
- 
+
 export default SliderTemplates;
