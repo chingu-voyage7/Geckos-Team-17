@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+ 
 import Slick from 'react-slick';
 import styles from './slider.css';
 
@@ -17,14 +17,14 @@ const SliderTemplates = (props) => {
       slidesToScroll: 1,
       ...props.settings 
     }
-  
+   
     switch(props.type) {
       case ('showPet'):
         petTemplate = props.data.map( (pet, index) => {
           return(
             <div key={index}>
               <div className={styles.showPet_pet}>
-                <Link to={'/api/v1/pets/${pet.id}'}>
+                <Link to={'http://localhost:5000/api/v1/pets/${pet.id}'}>
                   <div className={styles.showPet_petBio}> 
                     {pet.petname} 
                   </div>
@@ -33,7 +33,7 @@ const SliderTemplates = (props) => {
             </div> 
           )
         })
- 
+
         break;
       default:
       petTemplate = null;

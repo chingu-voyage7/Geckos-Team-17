@@ -15,9 +15,9 @@ class PetSlider extends Component {
       }
     ]
   }
-   
+  
   componentWillMount() {
-    axios.get('/api/v1/pet?_start=${this.props.start}&_end=${this.props.amount}').then(res => {
+    axios.get('http://localhost:5000/api/v1/pets?_start=${this.props.start}&_end=${this.props.amount}').then(res => {
       this.setState({
         pets: res.data
       })
