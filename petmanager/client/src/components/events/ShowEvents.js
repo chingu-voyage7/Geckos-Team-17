@@ -8,13 +8,13 @@ const ShowEvents = () => {
     <div>
       <PetSlider 
         type="showPet"
-        start={0}
+        start={1}
         amount={1}
         settings={{
           dots: true
         }}
       />
-  
+   
       <PetList />
     </div>
   )

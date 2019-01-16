@@ -4,7 +4,7 @@ import axios from 'axios';
 import SliderTemplate from './slider_templates';
 
 class PetSlider extends Component {
- 
+
   state = {
     pets: [
       {
@@ -15,7 +15,7 @@ class PetSlider extends Component {
       }
     ]
   }
-  
+   
   componentWillMount() {
     axios.get('http://localhost:5000/api/v1/pets?_start=${this.props.start}&_end=${this.props.amount}').then(res => {
       this.setState({
