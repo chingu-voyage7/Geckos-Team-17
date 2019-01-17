@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import {CSSTransition, TransitionGroup } from 'react-transition-group';
 import axios from 'axios';
+
 import styles from '../list/list.css';
+import Button from '../buttons/Buttons'; 
 
 class PetList extends Component {
 
@@ -75,9 +77,11 @@ class PetList extends Component {
         >
           {this.renderPets(this.props.type)}
         </TransitionGroup>
-        <div onClick={() => this.loadMore()}>
-          Load More.. 
-        </div>
+        <Button 
+          type="loadmore"
+          loadMore={() => this.loadMore()}
+          cta="Load More Pet Cards"
+        />
       </div>
     );
   }
