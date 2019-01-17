@@ -13,7 +13,7 @@ class Categories extends Component {
   
   render () {
     return (
-        
+       
       <div>
         <Header />
         {this.props.children}

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-import SliderTemplate from './slider_templates'; 
+import SliderTemplates from './slider_templates'; 
 
 class PetSlider extends Component {
 
@@ -15,7 +15,7 @@ class PetSlider extends Component {
       }
     ]
   }
- 
+
   componentWillMount() {
     axios.get('http://localhost:5000/api/v1/pets?_start=${this.props.start}&_end=${this.props.amount}').then(res => {
       this.setState({
@@ -27,7 +27,7 @@ class PetSlider extends Component {
   render() {
     return (
       <div>
-        <SliderTemplate 
+        <SliderTemplates 
           data={this.state.pets} 
           type={this.props.type}
           settings={this.props.settings}  

@@ -24,5 +24,5 @@ const ShowEvents = () => {
     </div>
   )
 }
- 
+
 export default ShowEvents;

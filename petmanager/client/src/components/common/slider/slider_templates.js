@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
  
 import Slick from 'react-slick';
 import styles from './slider.css';
-
+ 
 const SliderTemplates = (props) => {
   
     let petSliderTemplate = null;
@@ -24,7 +24,10 @@ const SliderTemplates = (props) => {
           return(
             <div key={index}>
               <div className={styles.showPet_pet}>
+              <Link to={'/pets/${pet.id}'}>
+              {/* Not certain which is valid, top one or bottom, so...
                 <Link to={'http://localhost:5000/api/v1/pets/${pet.id}'}>
+                */}
                   <div className={styles.showPet_petBio}> 
                     {pet.petname} 
                   </div>
