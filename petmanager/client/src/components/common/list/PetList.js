@@ -9,6 +9,7 @@ import Button from '../buttons/Buttons';
 class PetList extends Component {
 
   state = {
+    owners: [],
     pets: [],
     start: this.props.start,
     end: this.props.start + this.props.amount,
@@ -51,6 +52,7 @@ class PetList extends Component {
             <div>
               <div className={styles.petlist_pet}>
                 <Link to={'/pets/${pet.id}'}>
+                    owners 
                   <h2>{pet.petname}</h2>
                 {/* Not certain which is valid, top one or bottom, so...
                   <Link to={'http://localhost:5000/api/v1/pets/${pet.id}'}>
@@ -78,9 +80,9 @@ class PetList extends Component {
           {this.renderPets(this.props.type)}
         </TransitionGroup>
         <Button 
-          type="loadmore"
+          type="loadmorePetsCard"
           loadMore={() => this.loadMore()}
-          cta="Load More Pet Cards"
+          cta="Load More Pets"
         />
       </div>
     );

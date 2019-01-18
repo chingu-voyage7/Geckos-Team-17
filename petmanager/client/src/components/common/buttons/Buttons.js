@@ -8,13 +8,19 @@ const Buttons = (props) => {
   let petCardsTemplate = null;
 
   switch(props.type) {
-    case 'loadmore':
-      petCardsTemplate = null;
+    case 'loadmorePetsCard':
+      petCardsTemplate = (
+        <div className={styles.blue_btn}
+          onClick={props.loadMore}
+        >
+          {props.cta}
+        </div>
+      );
       break;
     default:
-      template = null
+      petCardsTemplate = null
   }
     return petCardsTemplate;
 };
 
-export default Buttons; 
+export default Buttons;
