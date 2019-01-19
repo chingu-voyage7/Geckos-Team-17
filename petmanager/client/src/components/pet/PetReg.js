@@ -55,12 +55,12 @@ class PetReg extends Component {
                   </div> 
                   <div className="field is-grouped is-grouped-right">
                     <p className="control">
-                      <a className="button is-link is-primary">
+                      <a className="button is-link">
                         Next
                       </a>
                     </p>
                     <p className="control">
-                      <a className="button is-link is-light">
+                      <a className="button is-text">
                         Cancel
                       </a>
                     </p>

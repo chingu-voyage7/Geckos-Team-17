@@ -13,11 +13,17 @@ class OwnerReg extends Component {
               <div className="box">
                 <form>
                   <div className="field">
-                    <label className="label">Owner's Name</label>
-                    <div className="control">
-                      <input className="input" type="text" placeholder="Text input" />  
-                      {/* <input className="input is-large" type="email" placeholder="Your Email" autofocus /> */}
+                    <label className="label">Owner Info</label>
+                  </div>
+                  <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                      <label className="label">Name</label>
                     </div>
+                      <div class="field-body">
+                        <div className="field">
+                          <input className="input" type="text" placeholder="Please enter owners name here" />
+                        </div>
+                      </div>
                   </div>
                   <div className="field is-horizontal">
                     <div className="field-label" />
@@ -30,36 +36,61 @@ class OwnerReg extends Component {
                               </a>
                             </p>
                             <p className="control is-expanded">
-                              <input className="input" type="tel" placeholder="Your phone number" />
+                              <input className="input" type="tel" placeholder="Please enter phone number here" />
                             </p>
                           </div>
-                            <p className="help">Do not enter the first zero</p>
+                            <p className="help" >Do not enter the first zero</p>
                         </div>
                       </div>
                     </div>
-                  <div className="field">
-                  <label className="label">Email</label>
-                    <div className="control has-icons-left has-icons-right">
-                      <input className="input is-danger" type="email" placeholder="Email input" defaultValue="hello@" />
-                      <span className="icon is-small is-left">
-                        <i className="fas fa-envelope" />
-                      </span>
-                      <span className="icon is-small is-right">
-                        <i className="fas fa-exclamation-triangle" />
-                      </span>
+                    <div class="field is-horizontal">
+                      <div class="field-label is-normal">
+                        <label className="label">Email</label>
+                      </div>
+                      <div class="field-body">
+                        <div className="field">
+                          <div className="control has-icons-left">
+                            <input className="input" type="email" placeholder="Please enter email here" />
+                            <span className="icon is-small is-left">
+                              <i className="fas fa-envelope" />
+                            </span>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                  <div className="field is-grouped is-grouped-right">
-                      <p className="control">
-                        <a className="button is-primary is-link">
-                          Submit
-                        </a>
-                      </p>
-                      <p className="control">
-                        <a className="button is-light is-link">
-                          Cancel
-                        </a>
-                      </p>
+
+                    <div className="field is-horizontal">
+                      <div className="field-label is-normal">
+                        <label className="label">Address</label>
+                      </div>
+                      <div className="field-body">
+                        <div className="field">
+                          <div className="control">
+                            <textarea className="textarea" placeholder="Please enter address here"></textarea>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <div class="field is-horizontal">
+                      <div class="field-label">
+                        {/*<!-- Left empty for spacing -->*/}
+                      </div>
+                      <div class="field-body">
+                        <div className="field is-grouped is-grouped-right">
+                            <p className="control">
+                              <a className="button is-primary is-link">
+                                Next
+                              </a>
+                            </p>
+                            <p className="control">
+                              <a className="button is-light is-text">
+                                Cancel
+                              </a>
+                            </p>
+                        </div>
+                      </div>
                   </div>
                 </form>
               </div>
