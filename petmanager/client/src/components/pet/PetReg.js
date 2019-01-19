@@ -11,10 +11,22 @@ class PetReg extends Component {
               <div className="box">
                 <form>
                   <div className="field">
-                    <label className="label">Pet's Name</label>
+                    <label className="label">Pet Info</label>
                     <div className="control">
                       <input className="input" type="text" placeholder="Enter pet name here" />  
-                      {/* <input className="input is-large" type="email" placeholder="Your Email" autofocus /> */}
+                     {/* <input className="input is-large" type="email" placeholder="Your Email" autofocus /> */}
+                    </div>
+                  </div>
+                  <div className="field">
+                    <div className="control">
+                      <input className="input" type="text" placeholder="Enter pet colour here" />  
+                     {/* <input className="input is-large" type="email" placeholder="Your Email" autofocus /> */}
+                    </div>
+                  </div>
+                  <div className="field">
+                    <div className="control">
+                      <input className="input" type="text" placeholder="Enter pet breed here" />  
+                     {/* <input className="input is-large" type="email" placeholder="Your Email" autofocus /> */}
                     </div>
                   </div>
                   <div className="field is-horizontal">
@@ -44,7 +56,7 @@ class PetReg extends Component {
                   <div className="field is-grouped is-grouped-right">
                     <p className="control">
                       <a className="button is-link is-primary">
-                        Submit
+                        Next
                       </a>
                     </p>
                     <p className="control">
