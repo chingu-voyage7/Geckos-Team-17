@@ -11,6 +11,7 @@ const ShowEvents = () => {
     <div>
       <TodoItemSlider 
       type="showTodo"
+      itemname="true"
       start={5}
       amount={5}
       settings={{
@@ -20,6 +21,8 @@ const ShowEvents = () => {
 
       <OwnerSlider 
       type="showOwner"
+      name="true"
+      datecalc="true"
       start={5}
       amount={5}
       settings={{
@@ -29,6 +32,8 @@ const ShowEvents = () => {
 
       <PetSlider 
         type="showPet"
+        petname="true"
+        datecalc="true"
         start={5}
         amount={5}
         settings={{
@@ -38,13 +43,17 @@ const ShowEvents = () => {
 
       <OwnersList 
         type="ownerCard"
-        loadmore={true}
+        name="true"
+        datecalc="true"
+        loadmore={false}
         start={5}
         amount={5}
       />
-  
+
       <PetsList 
         type="petCard"
+        pettype="true"
+        datecalc="true"
         loadmore={true}
         start={5}
         amount={5}
