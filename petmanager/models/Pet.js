@@ -28,7 +28,7 @@ const PetSchema = new Schema({
 		type: Date,
 		default: ''
 	},
-	newarrivaldate: {
+	arrivaldatecurrent: {
 		type: Date,
 		default: Date.now
 	},
