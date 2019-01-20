@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import ShowEvents from './components/events/ShowEvents';
-import Register from './components/auth/Register';
+import OwnerReg from './components/owner/OwnerReg';
 import Calendar from "./components/calendar/Calendar";
 import Profile from "./components/profile/Profile";
 //import Header from "./components/header/Header"; 
@@ -29,7 +29,7 @@ import Categories from './components/categories/Categories';
               </Switch>
             </Categories> 
             <div className="container">
-              <Route exact path="/register" component={ Register } />
+              <Route exact path="/register" component={ OwnerReg } />
               <Route exact path="/profile" component={ Profile } />
               <Route exact path="/calendar" component={ Calendar } />
             </div>
