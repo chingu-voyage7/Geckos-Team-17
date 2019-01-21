@@ -50,7 +50,7 @@ class PetsList extends Component {
             key={index}
           > 
             <div>
-              <div className={styles.petlist_pet}>
+              <div className={styles.petslist_pet}>
                 <Link to={'/pets/${pet.id}'}>
                     owners 
                   <h2>{pet.petname}</h2>
