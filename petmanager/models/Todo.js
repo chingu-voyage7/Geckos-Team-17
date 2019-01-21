@@ -11,7 +11,7 @@ const TodoSchema = new Schema({
 		type: Boolean,
 		default: false
 	},
-	updatecatround: {
+	updatepetround: {
 		type: Boolean,
 		default: false
 	},
