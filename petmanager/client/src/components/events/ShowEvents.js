@@ -12,6 +12,7 @@ const ShowEvents = () => {
       <TodoItemSlider 
       type="showTodo"
       itemname="true"
+      loadmore="true"
       start={5}
       amount={5}
       settings={{
@@ -22,6 +23,7 @@ const ShowEvents = () => {
       <OwnerSlider 
       type="showOwner"
       name="true"
+      pettype="true"
       datecalc="true"
       start={5}
       amount={5}
@@ -33,6 +35,7 @@ const ShowEvents = () => {
       <PetSlider 
         type="showPet"
         petname="true"
+        updatepetrounds="true"
         datecalc="true"
         start={5}
         amount={5}
@@ -44,6 +47,8 @@ const ShowEvents = () => {
       <OwnersList 
         type="ownerCard"
         name="true"
+        petname="true"
+        updatepetrounds="true"
         datecalc="true"
         loadmore={false}
         start={5}
@@ -52,6 +57,7 @@ const ShowEvents = () => {
 
       <PetsList 
         type="petCard"
+        petname="true"
         pettype="true"
         datecalc="true"
         loadmore={true}
