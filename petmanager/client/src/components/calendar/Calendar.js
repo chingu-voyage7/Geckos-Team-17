@@ -18,11 +18,22 @@ class Calendar extends Component {
       width: window.innerWidth,
       toDoOpen: false,
       date: new Date(),
-      time: "10:00"
+      time: "10:00",
+      instance:{
+        id:"",
+        title:"",
+        description:"",
+        start:"",
+        end:"",
+        approxmeetduration:""
+      },
+      events:[]
     };
   }
+  componentDidMount(){
+      this.props.todos.getToDo();
+  }
   onOpenModal = event => {
-    console.log(event);
     console.log("Here");
     this.setState({ open: true, data: event });
   };
@@ -45,19 +56,64 @@ class Calendar extends Component {
   onSubmit=()=>{
       this.props.todos.addToDo("title","description",this.state.date);
   }
+  deleteToDo=async ()=>{
+    let response=await this.props.todos.deleteToDo(this.state.data.id);
+    this.props.todos.getToDo();
+    this.onCloseModal();
+  }
+  changeInputs=(e)=>{
+    console.log(e.target.value);
+    let data={...this.state.data};
+    this.setState({
+      data:{
+        ...data,
+        [e.target.name]:e.target.value
+      }
+    });
+  };
+  updateToDo=async ()=>{
+    let data=this.state.data;
+    let id=data.id;
+    data.itemname=data.title;
+    delete data.title;
+    console.log(data);
+    let response=await this.props.todos.updateToDo(id,data);
+    console.log(response);
+  };
+  componentWillReceiveProps(newProps){
+    let todos=newProps.todo.events;
+    console.log(todos);
+    let events=[];
+    for(let i=0;i<todos.length;i++){
+      let instance={
+        id:todos[i]._id,
+        title:todos[i].itemname,
+        description:todos[i].description,
+        start:new Date(todos[i].meettime),
+        end:moment(new Date(todos[i].meettime)).add(todos[i].approxmeetduration,'m').toDate(),
+        approxmeetduration:todos[i].approxmeetduration
+      }
+      events.push(instance);
+    }
+    console.log("todos");
+    console.log(events);
+    this.setState({events});
+  }
   render() {
     let views = ["month", "week", "agenda", "day"];
     if (this.state.width < 800) {
       views = ["month"];
     }
+    console.log("Here");
+    let events=this.state.events;
     return (
       <div style={{ height: 600, margin: "2.5%", marginTop: "5%" }}>
         <BigCalendar
           localizer={localizer}
-          events={this.props.todo.events}
+          events={events}
           startAccessor="start"
           endAccessor="end"
-          onSelectEvent={this.onOpenModal}
+          onSelectEvent={(e)=>this.onOpenModal(e)}
           onSelectSlot={this.onOpenModal}
           views={views}
         />
@@ -70,12 +126,23 @@ class Calendar extends Component {
           Details for the event:-
           <div>
             <b>Title: </b>
-            {this.state.data.title}
+            <input type="text" name="title" value={this.state.data.title} onChange={this.changeInputs}/>
           </div>
           <div>
             <b>Description: </b>
-            {this.state.data.description}
+            <input type="text" name="description" value={this.state.data.description} onChange={this.changeInputs}/>
           </div>
+          <div>
+            <b>Meet time: </b>
+            {/* {new Date(this.state.data.start).toDateString()} */}
+            <input type="text" name="meettime" value={moment(this.state.data.start, moment.ISO_8601).format('MM/DD/YYYY HH:mm')} onChange={this.changeInputs}/>
+          </div>
+          <div>
+            <b>Approx meet length: </b>
+            <input type="text" name="approxmeetduration" value={this.state.data.approxmeetduration+"minutes"} onChange={this.changeInputs}/>
+          </div>
+          <button onClick={this.deleteToDo}>Delete this?</button>
+          <button onClick={this.updateToDo}>Update this?</button>
         </Modal>
         <p className="link-text text-center" onClick={this.handleOpenClickTodo}>
           Add a to-do

@@ -98,9 +98,12 @@ apiRouter.get('/:todoId', (req, res) => {
 
 //Use {new:true} to return the new document
 apiRouter.post('/:todoId', (req, res) => {
+	console.log(req.params.todoId);
+	console.log(req.body);
 	Todo.findOneAndUpdate({ _id: req.params.todoId},req.body, {new: true})
 		.then((updatedTodo) => {
 			if (updatedTodo) {
+				console.log(updatedTodo);
 				res.json(updatedTodo);
 			} else {
 				res.status(404).json({ updateOfTodo: 'Could not update todos' });
