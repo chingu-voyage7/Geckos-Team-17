@@ -4,7 +4,8 @@ import {CSSTransition, TransitionGroup } from 'react-transition-group';
 import axios from 'axios';
 
 import styles from '../list/list.css';
-import Button from '../buttons/Buttons'; 
+import Button from '../buttons/Buttons';
+import PetBioCard from '../bioCard/PetBioCard';
 
 class PetsList extends Component {
 
@@ -51,8 +52,8 @@ class PetsList extends Component {
           > 
             <div>
               <div className={styles.petslist_pet}>
-                <Link to={'/pets/${pet.id}'}>
-                    owners 
+                <Link to={'api/v1/pets/${pet.id}'}>
+                    <PetBioCard pets={this.state.pets} pet={[pet.pettype, pet.petcolour]} dateCalc={pet.datecalc} owner={pet.owner} />  
                   <h2>{pet.petname}</h2>
                 {/* Not certain which is valid, top one or bottom, so...
                   <Link to={'http://localhost:5000/api/v1/pets/${pet.id}'}>
@@ -89,4 +90,4 @@ class PetsList extends Component {
   }
 }
 
-export default PetsList;
+export default PetsList; 
