@@ -24,7 +24,7 @@ const SliderTemplates = (props) => {
           return(
             <div key={index}>
               <div className={styles.showPet_pet}>
-                <Link to={'/pets/${pet.id}'}>
+                <Link to={'api/v1/pets/${pet.id}'}>
                 {/* Not certain which is valid, top one or bottom, so...
                 <Link to={'http://localhost:5000/api/v1/pets/${pet.id}'}>
                 */}
@@ -38,13 +38,13 @@ const SliderTemplates = (props) => {
         })
 
         break;
-
+ 
       case ('showOwner'):
         sliderTemplate = props.data.map( (owner, index) => {
           return(
             <div key={index}>
               <div className={styles.showOwner_owner}>
-                <Link to={'/owners/${owner.id}'}>
+                <Link to={'/api/v1/owners/${owner.id}'}>
                   <div className={styles.showOwner_ownerBio}>
                     {owner.name}
                   </div>
@@ -61,7 +61,7 @@ const SliderTemplates = (props) => {
           return(
             <div key={index}>
               <div className={styles.showTodo_todo}>
-                <Link to={'/todos/${todo.id}'}>
+                <Link to={'api/v1/todos/${todo.id}'}>
                   <div className={styles.showTodo_item}>
                     {todo.itemname}
                   </div>
@@ -70,7 +70,7 @@ const SliderTemplates = (props) => {
             </div>
           )
         })
-
+ 
         break;
 
       default:
