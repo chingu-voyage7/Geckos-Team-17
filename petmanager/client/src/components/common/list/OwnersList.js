@@ -27,8 +27,8 @@ class OwnersList extends Component {
 
     render() {
         return(
-            <div>
-                { this.renderPetRounds()}
+            <div className={styles.ownersList_wrapper}>
+                { this.renderPetRounds() }
             </div>
         )
     }
