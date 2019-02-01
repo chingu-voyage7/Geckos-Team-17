@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import styles from './list.css';
+//import { Link } from 'react-router-dom';
+//import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import styles from '../list/list.css';
 import axios from 'axios';
 
-import Button from '../buttons/Buttons';
-
+//import Button from '../buttons/Buttons';
 
 class OwnersList extends Component {
 
@@ -19,18 +19,25 @@ class OwnersList extends Component {
         amount: this.props.amount
     }
 
-    renderPetRounds = () => {
-      return this.props.updatepetround ? 
-        <h3><strong>Pet Rounds</strong> List</h3> 
-        : <h3><strong>Dogs</strong> List</h3>
+    
+    componentWillMount() {
+      axios.get('http://localhost:5000/api/v1/owners?_start=${this.state.start}&_end=${this.state.end}')
+        .then(res => {
+          this.setState({
+            owners:[...this.state.owners, ...res.data]
+          })
+        })
     }
-
+    
     render() {
-        return(
-            <div className={styles.ownersList_wrapper}>
-                { this.renderPetRounds() }
-            </div>
-        )
+      console.log(this.state.owners)
+      return(
+        <div>
+          {/*<div className={styles.ownersList_wrapper}>
+              { this.renderPetRounds() }
+            </div>*/}
+        </div>    
+      )
     }
 }
 
