@@ -10,7 +10,7 @@ const PetBioCard = (props) => {
       </span>
       <span className={styles.dateCalc}>
         <FontAwesome name="clock-o" />
-        {props.dateCalc} 
+        {props.dateCalc}
       </span>
       <span className={styles.petData}>
       </span>
