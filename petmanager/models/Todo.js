@@ -7,6 +7,10 @@ const TodoSchema = new Schema({
 		type: String,
 		required: 'What is it you want to do?'
 	},
+	description:{
+		type:String,
+		required:"No details"
+	},
 	completed: {
 		type: Boolean,
 		default: false
