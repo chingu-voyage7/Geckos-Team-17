@@ -39,7 +39,8 @@ class Calendar extends Component {
   };
 
   onCloseModal = () => {
-    this.setState({ open: false });
+    this.setState({ open: false,toDoOpen:false });
+    alert("Refresh to see changes");
   };
 
   handleOpenClickTodo = event => {
@@ -47,14 +48,18 @@ class Calendar extends Component {
   };
 
   onCloseTodo = () => {
-    this.setState({ toDoOpen: false });
+    console.log("Here");
+    this.setState({ toDoOpen: false,open:false });
+    alert("Refresh to see changes");
   };
 
-  handleChange = date => this.setState({ date: date });
+  handleChange = date => this.setState({ date });
   onChange = time => this.setState({ time });
 
   onSubmit=()=>{
       this.props.todos.addToDo("title","description",this.state.date);
+      this.onCloseModal();
+      alert("Refresh to see changes");
   }
   deleteToDo=async ()=>{
     let response=await this.props.todos.deleteToDo(this.state.data.id);
@@ -75,10 +80,11 @@ class Calendar extends Component {
     let data=this.state.data;
     let id=data.id;
     data.itemname=data.title;
-    delete data.title;
+    delete data.title;  
     console.log(data);
     let response=await this.props.todos.updateToDo(id,data);
     console.log(response);
+    this.onCloseModal();
   };
   componentWillReceiveProps(newProps){
     let todos=newProps.todo.events;
@@ -138,8 +144,8 @@ class Calendar extends Component {
             <input type="text" name="meettime" value={moment(this.state.data.start, moment.ISO_8601).format('MM/DD/YYYY HH:mm')} onChange={this.changeInputs}/>
           </div>
           <div>
-            <b>Approx meet length: </b>
-            <input type="text" name="approxmeetduration" value={this.state.data.approxmeetduration+"minutes"} onChange={this.changeInputs}/>
+            <b>Approx meet length:(in minutes) </b>
+            <input type="text" name="approxmeetduration" value={this.state.data.approxmeetduration} onChange={this.changeInputs}/>
           </div>
           <button onClick={this.deleteToDo}>Delete this?</button>
           <button onClick={this.updateToDo}>Update this?</button>
@@ -167,7 +173,7 @@ class Calendar extends Component {
           <div className="row">
             <p>Time:&nbsp;</p>
             <DateTimePicker
-              onChange={this.onChange}
+              onChange={this.handleChange}
               value={this.state.date}
             />
           </div>
