@@ -24,20 +24,24 @@ const PetSchema = new Schema({
 	avatar: {
 		type: String
 	},
-	firsteverarrivaldate: {
-		type: Date,
-		default: ''
-	},
-	newarrivaldate: {
-		type: Date,
-		default: Date.now
-	},
-	expectedexitdate: {
-		type: Date
-	},
-	actualexitdate: {
-		type: Date
-	},
+	datecalc: [
+		{
+			firsteverarrivaldate: {
+				type: Date,
+				default: ''
+			},
+			arrivaldatecurrent: {
+				type: Date,
+				default: Date.now
+			},
+			expectedexitdate: {
+				type: Date
+			},
+			actualexitdate: {
+				type: Date
+			}
+		}
+	],
 	createddate: {
 		type: Date,
 		default: Date.now

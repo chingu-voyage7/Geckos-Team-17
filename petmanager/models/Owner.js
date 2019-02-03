@@ -17,7 +17,7 @@ const OwnerSchema = new Schema({
 	},
 	pets: [
 		{
-			// Arrays allows possibility of more than one pet
+			// Array allows possibility of more than one pet
 			type: Schema.Types.ObjectId,
 			ref: 'pet'
 		}

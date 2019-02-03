@@ -5,7 +5,7 @@ const express = require('express');
 	this set of routes with the ones from its parents  
 */
 
-// globals
+// globals 
 const apiRouter = express.Router({ mergeParams: true });
 const gravatar = require('gravatar');
 //const bcrypt = require('bcryptjs');
@@ -25,7 +25,7 @@ apiRouter.get('/test', (req, res) => res.json({ message: 'Owners does work!' }))
 // @access   Public
 apiRouter.get('/', (req, res) => {
 	Owner.find()
-		//	.populate('owner', [ 'name', 'contactnumber', 'pets', 'address' ])
+		.populate('owner', [ 'name', 'contactnumber', 'pets', 'address' ])
 		.then((owners) => {
 			if (owners) {
 				res.json(owners);
@@ -110,7 +110,7 @@ apiRouter.post('/register', (req, res) => {
 // accessed thru ToDo page. If so, HOW?
 // @access  Public
 
-//This only lists all the owners and all the pets
+//This only lists all the owners and all the pets. WHY ../new' ?
 apiRouter.get('/:ownerId/pets/new', (req, res) => {
 	Owner.findById(req.params.ownerId).then((owner) => {
 		Pet.find().then((pets) => {

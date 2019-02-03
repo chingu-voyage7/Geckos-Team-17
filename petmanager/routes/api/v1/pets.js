@@ -14,6 +14,7 @@ apiRouter.get('/test', (req, res) => res.json({ message: 'Pets does work!' }));
 // @access   Public
 apiRouter.get('/', (req, res) => {
 	Pet.find()
+		.populate('pets', ['owners', 'petname', 'pettype', '_id'])
 		.then((pets) => {
 			return res.json(pets);
 		})

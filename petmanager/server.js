@@ -2,6 +2,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const cors = require("cors");
 
 // app imports
 const owners = require('./routes/api/v1/owners');
@@ -16,6 +17,13 @@ const app = express();
 // Body parser middleware
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+
+// Setting up CORS
+const corsOptions = {
+	origin: ["*", "http://localhost:3000"], // List of host authorized make cors request. For cross origin cookies specific host should be given. (ex:"http://localhost:3000")
+	credentials: true // Must enable for cross origin cookies.
+};
+app.use(cors(corsOptions));
 
 // DB Config
 const db = require('./config/keys').mongoURI;
