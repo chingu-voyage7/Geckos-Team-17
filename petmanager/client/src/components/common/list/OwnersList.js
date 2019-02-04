@@ -6,6 +6,8 @@ import axios from 'axios';
 
 //import Button from '../buttons/Buttons';
 
+
+
 class OwnersList extends Component {
 
     state = {
@@ -19,25 +21,18 @@ class OwnersList extends Component {
         amount: this.props.amount
     }
 
-    
-    componentWillMount() {
-      axios.get('http://localhost:5000/api/v1/owners?_start=${this.state.start}&_end=${this.state.end}')
-        .then(res => {
-          this.setState({
-            owners:[...this.state.owners, ...res.data]
-          })
-        })
+    renderPetRounds = () => {
+      return this.props.updatepetround ? 
+        <h3><strong>Pet Rounds</strong> List</h3> 
+        : <h3><strong>Dogs</strong> List</h3>
     }
-    
+
     render() {
-      console.log(this.state.owners)
-      return(
-        <div>
-          {/*<div className={styles.ownersList_wrapper}>
-              { this.renderPetRounds() }
-            </div>*/}
-        </div>    
-      )
+        return(
+            <div className={styles.ownersList_wrapper}>
+                { this.renderPetRounds() }
+            </div>
+        )
     }
 }
 
