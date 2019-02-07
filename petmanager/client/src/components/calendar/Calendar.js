@@ -195,4 +195,4 @@ const mapActionsToProps=dispatch=>{
   };
 }
 
-export default connect(mapStateToProps,mapActionsToProps)(Calendar);
+export default connect(mapStateToProps, mapActionsToProps)(Calendar);
