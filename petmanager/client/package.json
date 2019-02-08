@@ -4,8 +4,7 @@
   "private": true,
   "dependencies": {
     "axios": "^0.18.0",
-    "bulma": "^0.7.2",
-    "bulma-extensions": "^4.0.0",
+    "bulma": "^0.7.4",
     "classnames": "^2.2.6",
     "create-react-class": "^15.6.3",
     "font-awesome": "^4.7.0",
@@ -37,12 +36,9 @@
   "scripts": {
     "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
     "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive",
-    "start-js": "react-scripts start",
-    "start": "npm-run-all -p watch-css start-js",
-    "build-js": "react-scripts build",
-    "build": "npm-run-all build-css build-js",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test"
   },
   "browserslist": [
     ">0.2%",
