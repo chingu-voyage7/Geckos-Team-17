@@ -20,15 +20,23 @@ class PetsList extends Component {
   componentWillMount() {
     this.req(this.state.start, this.state.end)
   }
-
+ 
   req = (start, end) => {
     axios.get
+    ('/api/v1/pets?_start=${start}&_end={end}')
+        .then(res => {
+          this.setState({
+            pets: [...this.state.pets, ...res.data]
+          })
+    })
+    {/* Depending on if proxy setting used, top one or bottom, so..
       ('http://localhost:5000/api/v1/pets?_start=${start}&_end={end}')
         .then(res => {
           this.setState({
             pets: [...this.state.pets, ...res.data]
           })
     })
+  */} 
   }
 
   loadMore = () => {

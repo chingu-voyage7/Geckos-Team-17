@@ -25,7 +25,7 @@ const SliderTemplates = (props) => {
             <div key={index}>
               <div className={styles.showPet_pet}>
                 <Link to={'api/v1/pets/${pet.id}'}>
-                {/* Not certain which is valid, top one or bottom, so...
+                {/* Depending on if proxy setting used, top one or bottom, so...
                 <Link to={'http://localhost:5000/api/v1/pets/${pet.id}'}>
                 */}
                   <div className={styles.showPet_petBio}> 

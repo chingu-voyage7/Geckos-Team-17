@@ -9,13 +9,21 @@ class OwnerSlider extends Component {
     owners: [],
     pets: []
   }
-
+ 
   componentWillMount() {
-    axios.get('http://localhost:5000/api/v1/owners?_start=${this.props.start}&_end=${this.props.amount}').then(res => {
-      this.setState({
-        pets: res.data
+    axios.get
+      ('/api/v1/owners?_start=${this.props.start}&_end=${this.props.amount}').then(res => {
+        this.setState({
+          pets: res.data
       })
-    })
+    }) 
+    {/* Depending on if proxy setting used, top one or bottom, so.. 
+      ('http://localhost:5000/api/v1/owners?_start=${this.props.start}&_end=${this.props.amount}').then(res => {
+          this.setState({
+            pets: res.data
+          })
+      })
+    */}
   }
   
   render() {

@@ -10,11 +10,19 @@ class PetSlider extends Component {
   }
 
   componentWillMount() {
-    axios.get('http://localhost:5000/api/v1/pets?_start=${this.props.start}&_end=${this.props.amount}').then(res => {
+    axios.get
+      ('/api/v1/pets?_start=${this.props.start}&_end=${this.props.amount}').then(res => {
+        this.setState({
+          pets: res.data
+        })
+      })
+    {/* Depending on if proxy setting used, top one or bottom, so..
+    ('http://localhost:5000/api/v1/pets?_start=${this.props.start}&_end=${this.props.amount}').then(res => {
       this.setState({
         pets: res.data
       })
     })
+  */}
   }
   
   render() {
