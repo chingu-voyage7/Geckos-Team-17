@@ -19,22 +19,54 @@ class OwnerReg2 extends Component {
     this.onSubmit = this.onSubmit.bind(this);
   }
 
+  
   onChange(e) {
     this.setState({ [e.target.name]: e.target.value});
   }
  
+
+/*
+  onChange = (e) => {
+    this.setState({
+      name: '',
+      contactnumber: '',
+      email: '',
+      address: 'Please enter address here',
+      errors: {}
+    })
+  }
+
+*/
+
   onSubmit(e) {
     e.preventDefault();
-
+/*
     const newOwner = {
       name: this.state.name,
       contactnumber: this.state.contactnumber,
       email: this.state.email,
       address: this.state.address
     };
+
+*/
+        
+    const newOwner = {
+      name: this.state.name,
+      contactnumber: this.state.contactnumber,
+      email: this.state.email,
+      address: this.state.address
+    };
+    /* this.props.newOwner; */
+    this.setState({
+      name: '',
+      contactnumber: '',
+      email: '',
+      address: 'Please enter address here',
+      errors: {}
+    });
+/*
+    ==============
   
-    
-  /*
       console.log(newOwner);
   */ 
 
@@ -53,31 +85,37 @@ class OwnerReg2 extends Component {
               <div className="row">
                 <div className="box">
                   <form className="form" onSubmit={this.onSubmit}>
-                    <label>
-                      Name:
-                      <input 
-                        className="input" 
-                        id="addNameInput"
-                        type="text"
-                        name="name" 
-                        placeholder="Please enter owners name here"
-                        value={this.state.name}
-                        onChange={this.onChange}
-                      />
-                    </label>
 
-                    <label>
-                      Phone:
-                      <input 
-                        className="input" 
-                        id="addPhoneInput" 
-                        type="number"
-                        name="contactnumber" 
-                        placeholder="Please enter owners phone number here"
-                        value={this.state.contactnumber}
-                        onChange={this.onChange}
-                      />
-                    </label>
+                    <div className="field">
+                      <div className="field-label is-small">
+                        <label className="label">Name:</label>  
+                      </div> 
+                          <input 
+                            className="input" 
+                            id="addNameInput"
+                            type="text"
+                            name="name" 
+                            placeholder="Please enter owners name here"
+                            value={this.state.name}
+                            onChange={this.onChange}
+                          />
+                        
+                    </div>
+
+                    <div className="field">
+                      <label>
+                        Phone:
+                        <input 
+                          className="input" 
+                          id="addPhoneInput" 
+                          type="number"
+                          name="contactnumber" 
+                          placeholder="Please enter owners phone number here"
+                          value={this.state.contactnumber}
+                          onChange={this.onChange}
+                        />
+                      </label>
+                    </div>
 
                     <div className="field">
                       <label className="label">
