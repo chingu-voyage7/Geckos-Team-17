@@ -46,50 +46,76 @@ class OwnerReg2 extends Component {
 
   render() {
     return (
-      <div className="container">
-        <form onSubmit={this.onSubmit}>
-          <label>
-            Name:
-            <input 
-              className="input" 
-              id="addNameInput" 
-              type="text"
-              name="name" 
-              placeholder="Please enter owners name here"
-              value={this.state.name}
-              onChange={this.onChange}
-            />
-          </label>
+      <section className="hero is-success is-fullheight">
+        <div className="hero-body">
+          <div class="container">
+            <div className="column is-6 is-offset-3">
+              <div className="row">
+                <div className="box">
+                  <form className="form" onSubmit={this.onSubmit}>
+                    <label>
+                      Name:
+                      <input 
+                        className="input" 
+                        id="addNameInput"
+                        type="text"
+                        name="name" 
+                        placeholder="Please enter owners name here"
+                        value={this.state.name}
+                        onChange={this.onChange}
+                      />
+                    </label>
 
-          <label>
-            Phone:
-            <input 
-              className="input" 
-              id="addPhoneInput" 
-              type="number"
-              name="contactnumber" 
-              placeholder="Please enter owners phone number here"
-              value={this.state.contactnumber}
-              onChange={this.onChange}
-            />
-          </label>
+                    <label>
+                      Phone:
+                      <input 
+                        className="input" 
+                        id="addPhoneInput" 
+                        type="number"
+                        name="contactnumber" 
+                        placeholder="Please enter owners phone number here"
+                        value={this.state.contactnumber}
+                        onChange={this.onChange}
+                      />
+                    </label>
 
-          <label>
-            Email:
-            <input 
-              className="input" 
-              id="addEmailInput" 
-              type="email"
-              name="email" 
-              placeholder="Please enter owners email here"
-              value={this.state.email}
-              onChange={this.onChange}
-            />
-          </label>
-          <button type="submit" onSubmit={this.onSubmit}>Submit</button>
+                    <div className="field">
+                      <label className="label">
+                        Email:
+                        <input 
+                          className="input" 
+                          id="addEmailInput" 
+                          type="email"
+                          name="email" 
+                          placeholder="Please enter owners email here"
+                          value={this.state.email}
+                          onChange={this.onChange}
+                        />
+                      </label>
+                    </div>
 
-        </form>
-      </div>
+
+                    <div className="field is-horizontal">
+                      <div className="field-label">
+                        {/*<!-- Left empty for spacing -->*/}
+                      </div>
+                        <div className="field-body">
+                          <div className="field is-grouped is-grouped-right">
+                            <p className="control">
+                              <button className="button is-primary is-success" type="submit" onSubmit={this.onSubmit}>
+                                Submit
+                              </button>
+                            </p>
+                          </div>
+                        </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     );
   }
 }
