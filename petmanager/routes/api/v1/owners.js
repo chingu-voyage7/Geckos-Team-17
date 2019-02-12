@@ -22,21 +22,21 @@ apiRouter.get('/test', (req, res) => res.json({ message: 'Owners does work!' }))
 
 // @route   GET api/v1/owners/all
 // @desc    Get all owners route
-// @access   Public
+// @access   Public 
 apiRouter.get('/', (req, res) => {
 	Owner.find()
-		.populate('owner', [ 'name', 'contactnumber', 'pets', 'address' ])
+		//.populate('owner', [ 'name', 'contactnumber', 'pets', 'address' ]) 
 		.then((owners) => {
 			if (owners) {
 				res.json(owners);
 			} else {
 				res.status(404).json({ owners: 'There are no owners' });
 			}
-		})
+    })
 		.catch((err) => {
 			console.log(err);
 			//	res.status(500).json(err);
-		});
+    });
 });
 
 // @route   GET api/v1/owners/:ownerId
@@ -67,19 +67,20 @@ apiRouter.post('/register', (req, res) => {
 		if (owner) {
 			return res.status(400).json({ contactnumber: 'Contact number already exists' });
 		} else {
-			// We are using avatar as placeholder for image, will change later
+		/*	// We are using avatar as placeholder for image, will change later
 			const avatar = gravatar.url(req.body.email, {
 				s: '200', // Size
 				r: 'pg', // Rating
 				d: 'mm' // Default
 			});
-
+*/
 			const newOwner = new Owner({
 				name: req.body.name,
 				contactnumber: req.body.contactnumber,
-				avatar,
-				email: req.body.email
-				/*	
+				//avatar,
+				email: req.body.email,
+				address: req.body.address
+				/*
 				,
 			
 				password: req.body.password

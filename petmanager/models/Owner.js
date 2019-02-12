@@ -36,5 +36,5 @@ const OwnerSchema = new Schema({
 		default: Date.now
 	}
 });
-
+ 
 module.exports = Owner = mongoose.model('owners', OwnerSchema);

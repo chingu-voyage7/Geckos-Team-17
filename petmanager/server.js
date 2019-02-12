@@ -31,7 +31,7 @@ const db = require('./config/keys').mongoURI;
 // Connect to MongoDB
 mongoose.set('debug', true);
 //mongoose.set('useFindAndModify', true);
-mongoose.set('useCreateIndex', true);
+//mongoose.set('useCreateIndex', true);
 mongoose
 	.connect(db, { useNewUrlParser: true })
 	.then(() => console.log('MongoDB Connected'))
