@@ -12,7 +12,7 @@ const OwnerSchema = new Schema({
 		required: 'Pet owners contact number is required'
 	},
 	address: {
-		type: String
+		type: [String]
 		//required: 'Please enter pet owners address'
 	},
 	pets: [
