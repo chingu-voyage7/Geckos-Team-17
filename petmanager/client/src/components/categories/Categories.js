@@ -4,6 +4,7 @@ import Header from '../header/Header';
 import OwnerReg from '../owner/OwnerReg'; 
 import PetReg from '../pet/PetReg'; 
 import PetTypReg from '../pet/PetTypReg';
+import AddressReg from '../common/elements/AddressReg';
 //import PetSlider from '../common/slider/PetSlider';
 //import CategoriesListTabs from '../categories/CategoriesListTabs';
 //import ShowEvents from '../events/ShowEvents';
@@ -23,6 +24,7 @@ class Categories extends Component {
         </div>
         <PetTypReg />
         <OwnerReg />
+        <AddressReg />
         <PetReg /> 
         {this.props.children}
       </div>
