@@ -50,8 +50,11 @@ apiRouter.post('/register', (req, res) => {
 		petbreed: req.body.petbreed,
 		firsteverarrivaldate: req.body.firsteverarrivaldate
 	});
-
-	newPet.save().then((pet) => res.json(pet)).catch((err) => res.json(err));
+ 
+  newPet
+    .save()
+    .then((pet) => res.json(pet))
+    .catch((err) => res.json(err));
 });
 
 // @route   GET api/v1/pet

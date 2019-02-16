@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-// Create Schema
+// Create Schema 
 const PetSchema = new Schema({
 	petname: {
 		type: String,
@@ -14,11 +14,11 @@ const PetSchema = new Schema({
 	petcolour: {
 		type: String
 	},
-	pettype: {
-		type: String,
-		required: 'Is your pet a dog, cat or bunny rabbit?'
-	},
-	petbreed: {
+	pettypes: {
+		type: String
+		//enum: ['dog', 'cat', 'bunny rabbit', 'chicken', 'guinea pig', 'other']
+  },
+  petbreed: {
 		type: String
 	},
 	avatar: {
