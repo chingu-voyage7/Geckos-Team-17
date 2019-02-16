@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import axios from 'axios';
 
+
 class PetReg extends Component {
   constructor() {
     super();
@@ -31,7 +32,7 @@ class PetReg extends Component {
     const newPet = {
       petname: this.state.petname,
       owner: this.state.owner,
-      pettype: this.state.pettype,
+      pettypeCat: this.state.pettype,
       petbreed: this.state.petbreed,
       petcolour: this.state.petcolour
     };
@@ -68,76 +69,53 @@ class PetReg extends Component {
                   </div>
                 </div>
                 
-                <form>
-                  <div className="field">
-                    <label className="label">Pet Info</label>
-                    <div className="control">
-                      <input className="input" 
-                        type="text" 
-                        placeholder="Enter pet name here" 
-                      />  
-                     {/* <input className="input is-large" type="email" placeholder="Your Email" autofocus /> */}
-                    </div>
-                  </div>
-                  <div className="field">
-                    <div className="control">
-                      <input className="input" 
-                        type="text" 
-                        placeholder="Enter pet colour here" 
-                      />  
-                     {/* <input className="input is-large" type="email" placeholder="Your Email" autofocus /> */}
-                    </div>
-                  </div>
-                  <div className="field">
-                    <div className="control">
-                      <input className="input" 
-                        type="text" 
-                        placeholder="Enter pet breed here" 
-                      />  
-                     {/* <input className="input is-large" type="email" placeholder="Your Email" autofocus /> */}
-                    </div>
-                  </div>
+                <form className="form" onSubmit={this.onSubmit}>
                   <div className="field is-horizontal">
-                <div className="field-label">
-                  <label className="label">Cat or Dog?</label>
-                </div>
-                <div className="field-body">
-                  <div className="field is-narrow">
+                    <div className="field-label is-normal is-grouped is-grouped-left">
+                      <label className="label">Name:</label>  
+                    </div>
+                      <input 
+                        className="input" 
+                        id="addPetNameInput"
+                        type="text"
+                        name="petname" 
+                        placeholder="Enter pet name here"
+                        value={this.state.petname}
+                        onChange={this.onChange} 
+                      />  
+                     {/* <input className="input is-large" type="email" placeholder="Your Email" autofocus /> */}
+                  </div>  
 
-                    <div className="control">
-                        <label className="radio">
-                          <input 
-                            type="radio" 
-                            name="question" />
-                          Cat
-                        </label>
-                        <label className="radio">
-                          <input 
-                            type="radio" 
-                            name="question" />
-                          Dog
-                        </label>
-                        <label className="radio">
-                          <input 
-                            type="radio" 
-                            name="question" />
-                          Other
-                        </label>
-                        </div>
+                  <div className="field is-horizontal">
+                    <div className="field-label is-normal is-grouped is-grouped-left">
+                      <label className="label">Breed:</label>  
+                    </div>
+                      <input 
+                        className="input" 
+                        id="addPetBreedInput"
+                        type="text"
+                        name="petbreed" 
+                        placeholder="Enter pet breed here"
+                        value={this.state.petbreed}
+                        onChange={this.onChange} 
+                      />  
+                     {/* <input className="input is-large" type="email" placeholder="Your Email" autofocus /> */}
+                  </div>  
+                  
+ 
+                  <div className="field is-horizontal">
+                    <div className="field-label">
+                      {/*<!-- Left empty for spacing -->*/}
+                    </div>
+                    <div className="field-body">
+                      <div className="field is-grouped is-grouped-right">
+                        <p className="control">
+                          <button className="button is-primary is-success" type="submit" onSubmit={this.onSubmit}>
+                            Submit
+                          </button>
+                        </p>
                       </div>
                     </div>
-                  </div> 
-                  <div className="field is-grouped is-grouped-right">
-                    <p className="control">
-                      <a className="button is-link">
-                        Next
-                      </a>
-                    </p>
-                    <p className="control">
-                      <a className="button is-text">
-                        Cancel
-                      </a>
-                    </p>
                   </div>
                 </form>
               </div>   
@@ -150,5 +128,3 @@ class PetReg extends Component {
 }
 
 export default PetReg;
-
-

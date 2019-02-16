@@ -12,7 +12,6 @@ class OwnerReg extends Component {
       email: '',
       address: 'Please enter address here',
       errors: {}
-
     };
 
     this.onChange = this.onChange.bind(this);
@@ -21,12 +20,13 @@ class OwnerReg extends Component {
 
   
   onChange(e) {
-    this.setState({ [e.target.name]: e.target.value});
+    this.setState({ [e.target.name]: e.target.value
+    });
   }
  
-
   onSubmit(e) {
     e.preventDefault();
+
 /*
     const newOwner = {
       name: this.state.name,
@@ -34,7 +34,6 @@ class OwnerReg extends Component {
       email: this.state.email,
       address: this.state.address
     };
-
 */
         
     const newOwner = {
@@ -129,8 +128,12 @@ class OwnerReg extends Component {
                           <div className="field-body">
                             <div className="field is-grouped is-grouped-right">
                               <p className="control">
-                                <button className="button is-primary is-success" type="submit" onSubmit={this.onSubmit}>
-                                  Submit
+                                <button 
+                                  className="button is-primary is-success"
+                                  id="ownerNextButton" 
+                                  type="submit" 
+                                  onSubmit={this.onSubmit}>
+                                    Next
                                 </button>
                               </p>
                             </div>
