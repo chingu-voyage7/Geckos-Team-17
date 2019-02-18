@@ -1,18 +1,21 @@
 import React, { Component } from 'react';
+import SelectPet from '../common/elements/SelectPet';
 
 import axios from 'axios';
 
 
-class PetReg extends Component {
+class PetRegY extends Component {
   constructor() {
     super();
     this.state = {
-      petname: '',
-      owner: '',
-      pettype: '',
-      petbreed: '',
-      petcolour: '',
-      errors: {}
+      newPet: {
+        petname: '',
+        petbreed: '',
+        pettype: '',
+        errors: {}
+      },
+
+      pettypeOptions: [ 'cat', 'dog', 'other' ]
 
     };
  
@@ -22,8 +25,18 @@ class PetReg extends Component {
 
   
   onChange(e) {
-    this.setState({ [e.target.name]: e.target.value});
-  }
+    let value = e.target.value;
+    let name = e.target.name;
+    this.setState(
+      prevState => ({
+        newPet: {
+          ...prevState.newPet,
+          [name]: value
+        }
+      }),
+      () => console.log(this.state.newPet)
+    );
+  };
  
 
   onSubmit(e) {
@@ -31,18 +44,16 @@ class PetReg extends Component {
     
     const newPet = {
       petname: this.state.petname,
-      owner: this.state.owner,
-      pettype: this.state.pettype,
       petbreed: this.state.petbreed,
-      petcolour: this.state.petcolour
+      pettype: this.state.pettype
     };
+
+    { /* let petData = this.state.newPet; */ }
   
     this.setState({
       petname: '',
-      owner: '',
-      pettype: '',
       petbreed: '',
-      petcolour: '',
+      pettype: [],
       errors: {}
     });
 
@@ -101,7 +112,15 @@ class PetReg extends Component {
                       />  
                      {/* <input className="input is-large" type="email" placeholder="Your Email" autofocus /> */}
                   </div>  
-                  
+                   
+                  <SelectPet 
+                    label={"Pet Type:"}
+                    name={"pettype"}
+                    options={this.state.pettypeOptions}
+                    value={this.state.newPet.pettype}
+                    placeholder={"Select Pet Type"}
+                    onChange={this.onChange}
+                  />{""}
  
                   <div className="field is-horizontal">
                     <div className="field-label">
@@ -128,4 +147,4 @@ class PetReg extends Component {
   }
 }
 
-export default PetReg;
+export default PetRegY;
