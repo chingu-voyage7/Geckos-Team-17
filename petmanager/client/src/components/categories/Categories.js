@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 
 import Header from '../header/Header';
 import OwnerReg from '../owner/OwnerReg'; 
-import PetReg from '../pet/PetReg'; 
-import PetTypReg from '../pet/PetTypReg';
+import PetRegY from '../pet/PetRegY'; 
+//import PetSelect from '../pet/PetSelect';
 import AddressReg from '../common/elements/AddressReg';
 //import PetSlider from '../common/slider/PetSlider';
 //import CategoriesListTabs from '../categories/CategoriesListTabs';
@@ -22,10 +22,10 @@ class Categories extends Component {
         <div class="container">
         <Header />
         </div>
-        <PetTypReg />
+        <PetRegY />
         <OwnerReg />
         <AddressReg />
-        <PetReg /> 
+         
         {this.props.children}
       </div>
     )

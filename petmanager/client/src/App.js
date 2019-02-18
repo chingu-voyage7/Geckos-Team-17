@@ -3,9 +3,8 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import ShowEvents from './components/events/ShowEvents';
 import OwnerReg from './components/owner/OwnerReg';
-import PetReg from './components/pet/PetReg';
+import PetRegY from './components/pet/PetRegY';
 import AddressReg from './components/common/elements/AddressReg';
-import PetTypReg from './components/pet/PetTypReg';
 import Calendar from "./components/calendar/Calendar";
 import Profile from "./components/profile/Profile";
 //import Header from "./components/header/Header"; 
@@ -32,9 +31,8 @@ import Categories from './components/categories/Categories';
               </Switch>
             </Categories> 
             <div className="container">
-              <Route exact path="/register" component={ PetReg } />
+              <Route exact path="/register" component={ PetRegY } />
               <Route exact path="/register" component={ OwnerReg } />
-              <Route exact path="/register" component={ PetTypReg } />
               <Route exact path="/register" component={AddressReg} />
               <Route exact path="/profile" component={ Profile } />
               <Route exact path="/calendar" component={ Calendar } />

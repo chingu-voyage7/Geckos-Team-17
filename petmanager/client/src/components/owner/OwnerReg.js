@@ -27,15 +27,7 @@ class OwnerReg extends Component {
   onSubmit(e) {
     e.preventDefault();
 
-/*
-    const newOwner = {
-      name: this.state.name,
-      contactnumber: this.state.contactnumber,
-      email: this.state.email,
-      address: this.state.address
-    };
-*/
-        
+
     const newOwner = {
       name: this.state.name,
       contactnumber: this.state.contactnumber,
