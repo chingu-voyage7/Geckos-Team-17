@@ -10,15 +10,13 @@ class OwnerReg extends Component {
       name: '',
       contactnumber: '',
       email: '',
-      address: 'Please enter address here',
       errors: {}
     };
 
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
   }
-
-  
+    
   onChange(e) {
     this.setState({ [e.target.name]: e.target.value
     });
@@ -26,7 +24,6 @@ class OwnerReg extends Component {
  
   onSubmit(e) {
     e.preventDefault();
-
 
     const newOwner = {
       name: this.state.name,
