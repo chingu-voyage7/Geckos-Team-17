@@ -14,10 +14,22 @@ const PetSchema = new Schema({
 	petcolour: {
 		type: String
 	},
-	pettype: {
-		type: String
-		//enum: ['dog', 'cat', 'bunny rabbit', 'chicken', 'guinea pig', 'other']
-  },
+	pettype: [
+		{
+			cat: {
+				type: Boolean,
+				default: false
+      },
+      dog: {
+				type: Boolean,
+				default: false
+      },
+      other: {
+				type: Boolean,
+				default: false
+      }
+    }
+  ],
   petbreed: {
 		type: String
 	},
