@@ -11,10 +11,26 @@ const OwnerSchema = new Schema({
 		type: Number,
 		required: 'Pet owners contact number is required'
 	},
-	address: {
-		type: [String]
-		//required: 'Please enter pet owners address'
-	},
+	address: [
+
+		{
+			house: {
+        type: String
+      },
+      street: {
+        type: String
+      }, 
+      street2: {
+        type: String
+      },
+      postcode: {
+        type: String
+      },
+      city: {
+        type: String
+      },
+    }
+  ],
 	pets: [
 		{
 			// Array allows possibility of more than one pet
