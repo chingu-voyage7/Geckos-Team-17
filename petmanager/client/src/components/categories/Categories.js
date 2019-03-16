@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
 import Header from '../header/Header';
-//import OwnerReg from '../owner/OwnerReg'; 
-//import PetRegClient from '../pet/PetRegClient';
-import RegClientOwn from '../authNot/RegClientOwn'; 
+//import PetReg from '../pet/PetReg'; 
+//import PetType24 from '../pet/PetType24';
+import RegClientOwn243 from '../authNot/RegClientOwn243'; 
 //import PetSelect from '../pet/PetSelect';
 //import AddressReg from '../common/elements/AddressReg';
 //import PetSlider from '../common/slider/PetSlider';
@@ -23,9 +23,9 @@ class Categories extends Component {
         <div class="container">
         <Header />
         </div>
-        <RegClientOwn />
-         
-        {this.props.children}
+        <RegClientOwn243 />
+                 
+        {this.props.children} 
       </div>
     )
   }

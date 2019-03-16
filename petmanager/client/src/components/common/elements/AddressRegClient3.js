@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-//import { Link } from 'react-router-dom';
-
-//import axios from 'axios';
 
 class AddressRegClient3 extends Component {
   constructor() {
@@ -95,7 +92,7 @@ class AddressRegClient3 extends Component {
                             onChange={this.props.onAddressChangePostCode}
                           />
                       </div>
- 
+
                       <div className="field is-horizontal">
                         <div className="field-label is-small is-grouped is-grouped-left">
                           <label className="label">City:</label>  
@@ -119,12 +116,12 @@ class AddressRegClient3 extends Component {
                           <div className="field-body">
                             <div className="field is-grouped is-grouped-right">
                               <p className="control">
-                                <button 
+                                <button
                                   className="button is-primary is-success"
                                   id="ownerAddressSubmitButton" 
                                   type="submit" 
                                   >
-                                    Submit
+                                    Next 
                                 </button>
                               </p>
                             </div>

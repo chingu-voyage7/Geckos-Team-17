@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import ShowEvents from './components/events/ShowEvents';
-import RegClientOwn from './components/authNot/RegClientOwn';
+import RegClientOwn243 from './components/authNot/RegClientOwn243';
+//import PetReg from './components/pet/PetReg';
 import Calendar from "./components/calendar/Calendar";
 import Profile from "./components/profile/Profile";
 //import Header from "./components/header/Header"; 
@@ -10,6 +11,7 @@ import { Provider } from 'react-redux';
 import store from './store/store';
 
 import Categories from './components/categories/Categories';
+//import RegClientSteps from './components/authNot/RegClientSteps';
  
 //import PetSlider from './components/common/slider/PetSlider';
 //import CategoriesReTabs from './components/categories/CategoriesReTabs';
@@ -22,14 +24,15 @@ import Categories from './components/categories/Categories';
       <Provider store={store}>
         <Router>
           <div className="App">
-            
+        
             <Categories >
               <Switch>
                 <Route exact path="/" component={ ShowEvents } />
               </Switch>
             </Categories> 
             <div className="container">
-              <Route exact path="/register" component={ RegClientOwn } />
+              <Route exact path="/owner_reg" component={ RegClientOwn243 } />
+    {/* <Route exact path="/pet_reg" component={ PetReg } /> */}
               <Route exact path="/profile" component={ Profile } />
               <Route exact path="/calendar" component={ Calendar } />
             </div>
