@@ -30,14 +30,29 @@ const db = require('./config/keys').mongoURI;
 
 // Connect to MongoDB
 mongoose.set('debug', true);
-//mongoose.set('useFindAndModify', true);
-//mongoose.set('useCreateIndex', true);
+mongoose.set('useFindOneAndUpdate', true);
+mongoose.set('useFindOneAndReplace', true);
+mongoose.set('useFindOneAndDelete', true);
+mongoose.set('useCreateIndex', true);
 mongoose
 	.connect(db, { useNewUrlParser: true })
 	.then(() => console.log('MongoDB Connected'))
 	.catch((err) => console.log(err));
 
-app.get('/', (req, res) => res.send('Hello NF'));
+//app.get('/', async (req, res) => res.send('Hello NF'));
+
+app.get('/', safeHandler(handler));
+
+function safeHandler(handler) {
+	return function(req, res) {
+    handler(req. res).catch(error => res.status(500).send(error.message));
+  };
+}
+
+async function handler(req, res) {
+  await new Promise((resolve, reject) => reject(new Error('Hang!')))
+  res.send('Hello NF');
+}
 
 // Use Routes
 app.use('/api/v1/owners', owners);
