@@ -1,18 +1,22 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-// Create Schema - "Owner" == pet owner
+// Create Schema - "Owner" == pet owner  
 const OwnerSchema = new Schema({
 	name: {
 		type: String,
-		required: 'A name is needed for the pet owner or client'
+	//	required: 'A name is needed for the pet owner or client'
 	},
 	contactnumber: {
 		type: Number,
-		required: 'Pet owners contact number is required'
+	// required: 'Pet owners contact number is required'
 	},
+	/*
+	pettype: {
+		type: String
+	},
+	*/
 	address: [
-
 		{
 			house: {
         type: String
@@ -33,7 +37,7 @@ const OwnerSchema = new Schema({
   ],
 	pets: [
 		{
-			// Array allows possibility of more than one pet
+			// Array allows possibility of more than one pet 
 			type: Schema.Types.ObjectId,
 			ref: 'pet'
 		}
@@ -51,6 +55,6 @@ const OwnerSchema = new Schema({
 		type: Date,
 		default: Date.now
 	}
-});
+}); 
  
 module.exports = Owner = mongoose.model('owners', OwnerSchema);
