@@ -1,4 +1,4 @@
-// npm packages
+// npm packages 
 const express = require('express');
 /* Include {mergeParams; true} in file where the nested params reside. 
 	mergeParams tells apiRouter to merge parameters that are created on 
@@ -7,7 +7,7 @@ const express = require('express');
 
 // globals 
 const apiRouter = express.Router({ mergeParams: true });
-const gravatar = require('gravatar');
+//const gravatar = require('gravatar');
 //const bcrypt = require('bcryptjs');
 
 // Load Owner model
@@ -63,48 +63,61 @@ apiRouter.get('/:ownerId', (req, res) => {
 apiRouter.post('/register', (req, res) => {
 	Owner.findOne({
 		contactnumber: req.body.contactnumber
-	}).then((owner) => {
-		if (owner) {
-			return res.status(400).json({ contactnumber: 'Contact number already exists' });
-		} else {
-		/*	// We are using avatar as placeholder for image, will change later
-			const avatar = gravatar.url(req.body.email, {
-				s: '200', // Size
-				r: 'pg', // Rating
-				d: 'mm' // Default
-			});
-*/
-			const newOwner = new Owner({
-				name: req.body.name,
-				contactnumber: req.body.contactnumber,
-				//avatar,
-				email: req.body.email,
-				address: req.body.address
-				/*
-				,
-			
-				password: req.body.password
-			});
+  })
+    .then((owner) => {
+      if (owner) {
+        return res.status(400).json({ contactnumber: 'Contact number already exists' });
+      } else {
+      // We are using avatar as placeholder for image, will change later
+        //const avatar = gravatar.url(req.body.email, {
+        //	s: '200', // Size
+        //	r: 'pg', // Rating
+        //	d: 'mm' // Default
+        //});
 
-			bcrypt.genSalt(10, (err, salt) => {
-				bcrypt.hash(newOwner.password, salt, (err, hash) => {
-					//	if (err) throw err; REFUSED TO WORK UNTIL I COMMENTED IT OUT. WHY?
-					newOwner.password = hash;
-					newOwner.save().then((owner) => res.json(owner)).catch((err) => console.log(err));
-				});
-			*/
-			});
+        const newOwner = new Owner({
+          name: req.body.name,
+          contactnumber: req.body.contactnumber,
+          //avatar, 
+          email: req.body.email,
+          address: req.body.address,
+          petname: req.body.petname
+          
+        //	,
+        
+        //	password: req.body.password 
+      //	});
 
-			newOwner
-				.save()
-				.then((owner) =>
-					//return res.render('/owners');
-					res.json(owner)
-				)
-				.catch((err) => console.log(err));
-		}
-	});
+      //	bcrypt.genSalt(10, (err, salt) => {
+      //		bcrypt.hash(newOwner.password, salt, (err, hash) => {
+      //			//	if (err) throw err; REFUSED TO WORK UNTIL I COMMENTED IT OUT. WHY?
+      //			newOwner.password = hash;
+      //			newOwner.save().then((owner) => res.json(owner)).catch((err) => console.log(err));
+      //		});
+        
+      });
+
+        newOwner
+          .save()
+
+          const newPet = new Pet({
+            petname: req.body.petname,
+            pettype: req.body.pettype,
+            //avatar,
+            petbreed: req.body.petbreed,
+            owner: req.body._id 
+          });
+
+          newPet
+            .save()
+            .then((owner) =>
+              res.json(owner)
+            )
+            .catch((err) => console.log(err));
+        } 
+    });
 });
+
 
 // @route   GET api/v1/owners/:ownerId/pets/new
 // @desc    Form to RENDER new owner's pet route - probably
