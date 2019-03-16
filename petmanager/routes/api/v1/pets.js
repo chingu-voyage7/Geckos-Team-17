@@ -27,7 +27,7 @@ apiRouter.get('/', (req, res) => {
         */
 		.catch((err) => res.json(err));
 });
-//});
+//}); 
 
 // @route   POST api/v1/pets/register
 // @desc    Register pet route
@@ -43,21 +43,36 @@ apiRouter.post('/register', (req, res) => {
   });
   */
 
+  // Extract ownerId from route
+  const { ownerId } = req.params;
+
+  // Set the pet's owner via route params
+  newPet.owner = ownerId;
+
 	const newPet = new Pet({
 		petname: req.body.petname,
 		pettype: req.body.pettype,
 		//avatar,
-		petbreed: req.body.petbreed,
-		firsteverarrivaldate: req.body.firsteverarrivaldate
+    petbreed: req.body.petbreed,
+		datecalc: req.body.datecalc
+
 	});
  
   newPet
     .save()
     .then((pet) => res.json(pet))
+    // Update owner's pet array?
+    .then(owner => {
+      // Query owner by route param ownerId?
+      Owner.findByIdAndUpdate(
+        // Add owner's ObjectId (_id), using $set [or  is $AddToSet better?]
+        ownerId, { $set: {owner: owner._id}}
+      );
+    })
     .catch((err) => res.json(err));
 });
 
-// @route   GET api/v1/pet
+// @route   GET api/v1/pet 
 // @desc    Form to render new pet thats just being entered route
 // @access   Public
 apiRouter.get('/new', (req, res) => {
